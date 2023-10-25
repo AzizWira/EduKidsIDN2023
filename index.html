@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome To EduKids</title>
+    <link rel="stylesheet" href="styling/style.css" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="icon" href="images/logo.png" type="image/icon type" />
+    <meta
+      name="description"
+      content="Edukids adalah sebuah website yang menyediakan berbagai macam materi pembelajaran untuk anak-anak."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  </head>
+
+  <body>
+    <nav>
+      <div class="wrapper-nav">
+        <div class="logo">
+          <img src="./assets/logo-navbar.png" alt="" class="logo-img" />
+        </div>
+        <input type="radio" name="slider" id="menu-btn-nav" />
+        <input type="radio" name="slider" id="close-btn-nav" />
+        <ul class="nav-links">
+          <label for="close-btn-nav" class="btn close-btn-nav"
+            ><i class="fas fa-times"></i
+          ></label>
+          <li><a href="index.html" class="active">Beranda</a></li>
+          <li><a href="materi.html">Materi</a></li>
+          <li><a href="kuis.html">Kuis</a></li>
+          <li><a href="tentang.html">Tentang Kami</a></li>
+        </ul>
+        <div class="nav-right">
+          <label for="menu-btn-nav" class="btn menu-btn-nav"
+            ><iconify-icon
+              icon="pajamas:hamburger"
+              style="color: #c58940"
+              width="30"
+            ></iconify-icon
+          ></label>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="banner">
+        <div class="banner1">
+          <div class="logo-banner">
+            <img src="assets/logo-2.png" alt="" />
+            EDUKIDS
+          </div>
+          <h1>Tingkatkan Keterampilan Bahasa Inggris Anak-anak</h1>
+          <button class="btn-banner">Belajar Sekarang</button>
+        </div>
+        <div class="banner2">
+          <img src="assets/pana.png" alt="" class="image-banner" />
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="about">
+        <div class="about1">
+          <img src="assets/about.png" alt="" class="image-about" />
+        </div>
+        <div class="about2">
+          <h2>Singkat Tentang Kami</h2>
+          <p>
+            EDUKIDS adalah portal pembelajaran bahasa Inggris untuk anak-anak
+            sekolah dasar maupun sekolah menengah pertama di Indonesia. Kami
+            menawarkan pengalaman belajar yang menyenangkan dan interaktif
+            dengan berbagai materi dan kuis.
+          </p>
+          <button>selengkapnya</button>
+        </div>
+      </div>
+
+      <div class="box-education">
+        <div class="box">
+          <p>Banyak materi yang bisa kamu pelajari disini</p>
+          <button>Belajar Sekarang!</button>
+          <img src="assets/ellipseBg.png" alt="" />
+        </div>
+        <div class="box">
+          <p>Kuis bahasa inggris yang bisa kamu kerjakan disini</p>
+          <button>Kerjakan Kuis!</button>
+          <img src="assets/ellipseBg.png" alt="" />
+        </div>
+      </div>
+
+      <div class="platform-user">
+        <div class="photo-profile">
+          <div class="ellipse">Z</div>
+          <div class="ellipse">K</div>
+          <div class="ellipse">W</div>
+        </div>
+        <h4>5000+</h4>
+        <h5>Pengguna Platform</h5>
+        <p>
+          Sudah banyak siswa/siswi Sekolah Dasar (SD) maupun Sekolah Menengah
+          Pertama (SMP) yang menggunakan platform kami untuk membantu mereka
+          dalam belajar bahasa inggris.
+        </p>
+      </div>
+
+      <!-- <h2>Pertanyaan Umum</h2>
+
+      <div class="general-question"></div> -->
+
+      <h2 class="title-contact">Kontak Kami</h2>
+      <form class="contact-us">
+        <div class="left">
+          <p>Nama</p>
+          <input type="text" placeholder="Nama" required />
+          <p>Nomor Telp</p>
+          <input type="text" placeholder="Nomor Hp/Telephone" required />
+          <p>Email</p>
+          <input type="text" placeholder="Email" required />
+        </div>
+        <div class="right">
+          <p>Pesan</p>
+          <textarea
+            name="pesan"
+            id=""
+            placeholder="Pesan"
+            required
+          ></textarea>
+          <button type="submit">Kirim</button>
+        </div>
+      </form>
+    </div>
+
+    <footer>
+      <img src="assets/logo-footer.png" alt="" />
+      <div class="line-footer"></div>
+      <p>© 2023 Copyright EDUKIDS Mata Panda</p>
+    </footer>
+
+    <script src="/logic/main.js"></script>
+  </body>
+</html>
