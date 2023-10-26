@@ -9,7 +9,7 @@ h1{
     line-height: normal;
 }
 
-p, li{
+p, .misi ul li{
     margin-top: 10px;
     color: #797979;
     font-family: 'Poppins', sans-serif;
