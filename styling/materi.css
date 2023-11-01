@@ -17,6 +17,15 @@ p{
     line-height: normal;
 }
 
+h4{
+    color: #4B4B4B;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
 .head-content{
     display: flex;
     margin: 80px 0 0 0;
@@ -52,44 +61,153 @@ p{
     margin-top: 38px;
     border-radius: 20px;
     border: 1px solid #C4C4C4;
-    /* max-width: 1244px;
-    height: 60px; */
-}
-
-.nav-content .list-content{
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
     gap: 20px;
-    padding: 10px 11px;
+    padding: 10px 0px 11px;
 }
 
-.nav-content .list-content li{
-    list-style: none;
+.nav-content button{
     padding: 6px 20px;
-    background-color: #F5F5F5;
-    border-radius: 10px;
-    /* padding: 6px 20px; */
-    /* margin: 10px 11px; */
-    
-}
-
-.nav-content .list-content li a{
+    background: #F5F5F5;
     color: #797979;
-    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
     font-size: 18px;
+    font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 
-.nav-content .list-content .active{
-    list-style: none;
+.nav-content button.active{
     padding: 6px 20px;
-    background-color: #E89C24;
+    background: #E89C24;
+    color: #fff;
     border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
-.nav-content .list-content .active a{
+
+
+/* .nav-content .list-content{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 11px;
+} */
+
+/* .nav-content .list-content li{
+    display: inline-flex;
+    padding: 10px 20px;
+    background-color: #F5F5F5;
+    color: #797979;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-content .list-content li{
+    list-style: none;
+}
+
+.nav-content .list-content li.active{
+    display: inline-flex;
+    padding: 10px 20px;
+    background-color: #E89C24;
     color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-family: 'Poppins', sans-serif;
+} */
+
+/* end navigation-section */
+
+.section{
+    margin-top: 38px;
+    border-radius: 30px;
+    border: 1px solid #C4C4C4;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    gap: 110px;
+}
+
+.kosakata .right{
+    margin-top: 15px;
+}
+
+.contoh{
+    margin-top: 18px;
+}
+
+.con-fill{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.fill{
+    border-radius: 30px;
+    border: 1px solid #C4C4C4;
+    padding: 15px 20px;
+    margin-top: 18px;
+}
+
+/* end kosakata */
+
+
+
+.con-fill li{    
+    color: #797979;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+/* end tenses */
+
+#percakapan h4{
+    margin-bottom: 12px;
+}
+
+.penjelasan{
+    margin-top: 12px;
+}
+
+/* end percapakan */
+
+.sound{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 22px;
+    gap: 18px;
+}
+
+/* end pengucapan */
+
+#pembentukan-kalimat .fill p{
+    margin-top: 18px;
+}
+
+/* end pembentukan-kalimat */
+
+.section{
+    display: none;
 }
