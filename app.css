@@ -282,4 +282,25 @@ footer p {
     margin: 30px 0;
 }
 
+footer .img{
+    max-width: 80%;
+}
+
+footer .img img{
+    width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 800px) {
+    footer {
+        padding: 20px 30px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    footer .img{
+        max-width: 50%;
+    }
+}
+
 /* end footer */

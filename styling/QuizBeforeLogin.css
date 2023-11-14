@@ -1,40 +1,35 @@
-.head-content{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.head-content {
     display: flex;
     margin: 80px 0 0 0;
     align-items: center;
     justify-content: space-between;
     border-radius: 30px;
     border: 1px solid #C4C4C4;
-    gap: 110px;
 }
 
-.h-content-left{
+.h-content-left {
     max-width: 330px;
     margin: 30px 23px;
 }
 
-.h-content-left img{
+.h-content-left img {
     width: 100%;
     height: auto;
 }
 
-.h-content-right{
-    /* max-width: 608px; */
-    margin: 88px 162px 88px 0px;
-}
-
-.h-content-right h1{
-    max-width: 506px;
+.h-content-right h1 {
     color: #0D6C61;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    width: 80%;
 }
 
-.h-content-right p{
-    margin-top: 18px;
-    color: #797979;
-    font-size: 24px;
-}
-
-.login-button{
+.login-button {
     background-color: #E89C24;
     color: white;
     padding: 8px 22px;
@@ -42,4 +37,55 @@
     font-size: 22px;
     font-weight: 600;
     border-radius: 30px;
+}
+
+@media only screen and (max-width: 1000px){
+    .h-content-right h1 {
+        font-size: 24px;
+    }
+    
+    .login-button {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .h-content-left {
+        width: 80%;
+        margin: 10px 15px;
+    }
+
+    .h-content-right h1 {
+        font-size: 20px;
+        width: 100%;
+    }
+    
+    .login-button {
+        margin-top: 10px;
+        font-size: 18px;
+        padding: 8px 18px;
+    }
+}
+
+@media only screen and (max-width: 550px){
+    .head-content{
+        flex-direction: column;
+        padding: 0px 20px 20px;
+    }
+
+    .h-content-left{
+        width: 50%;
+        margin: 0 0 10px -10px;
+    }
+
+    .h-content-right{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .h-content-right{
+        text-align: center;
+    }
 }
