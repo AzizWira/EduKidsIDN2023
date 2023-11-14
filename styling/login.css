@@ -1,32 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-:root {
-    --color-primer: #FFFFFF;
-    --color-aksen: #2A93D5;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.container-login {
+#formRegister{
+    display: none;
+}
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
-    justify-content: space-between;
     margin: 0 auto;
     height: 100vh;
-    gap: 50px;
+    gap: 80px;
     max-width: 1440px;
+    background: url(../assets/background-kuis.jpg);
 }
 
-.image-login {
-    width: 50%;
+.image {
+    width: 35%;
 }
 
-.image-login img {
+.image img {
     width: 100%;
     height: auto;
 }
@@ -40,34 +39,42 @@
     cursor: pointer;
 }
 
-.con-form-login {
-    width: 40%;
+.con-form {
+    width: 35%;
     background: #FFFFFF;
     border: 1px solid #E3E3E3;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.20);
     border-radius: 20px;
     text-align: center;
-    padding: 60px 55px 90px 55px;
-}
-
-.form-login {
-    margin-top: 85px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-}
-
-.title-form-login {
-    font-family: 'Fredoka';
-    font-weight: 500;
-    font-size: 30px;
-    color: var(--color-aksen);
-    display: flex;
-    justify-content: center;
     align-items: center;
 }
 
-.desc-form-login {
+.form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form p span{
+    color: #E89C24;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.img-logo {
+    width: 40%;
+}
+
+.img-logo img {
+    width: 100%;
+    height: auto;
+}
+
+.desc-form {
     margin-top: 30px;
     font-family: 'Poppins';
     font-style: normal;
@@ -77,20 +84,8 @@
     color: #797979;
 }
 
-@media screen and (max-width: 1008px) {
-    .image-login {
-        display: none;
-    }
-
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-}
-
 .con-desc {
-    max-width: 301px;
+    max-width: 300px;
     margin: 0 auto;
 }
 
@@ -131,6 +126,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    /* margin-top: 20px; */
 }
 
 .button-section .btn-1 {
@@ -138,9 +134,8 @@
     gap: 10px;
 }
 
-.button-section .btn-1 button:nth-child(1) {
+.button-section .btn-1 button{
     width: 100%;
-    margin-top: 60px;
     background-color: #FFFFFF;
     border-radius: 40px;
     font-family: 'Poppins';
@@ -151,21 +146,12 @@
     border: 1px solid #E89C24;
     cursor: pointer;
     padding: 8px 26px;
+    transition: 0.3s ease-in-out;
 }
 
-.button-section .btn-1 button:nth-child(2) {
-    width: 100%;
-    margin-top: 60px;
+.button-section .btn-1 button:hover{
     background: #E89C24;
-    border-radius: 40px;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
     color: #FFFFFF;
-    border: none;
-    cursor: pointer;
-    padding: 8px 26px;
 }
 
 .button-section .btn-2 button {
@@ -186,4 +172,54 @@
     font-style: normal;
     font-weight: 500;
     line-height: 20px;
+}
+
+@media screen and (max-width: 1008px) {
+    .image {
+        display: none;
+    }
+
+    .desc-form {
+        margin-top: 20px;
+    }
+
+    .con-form {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .con-form {
+        width: 70%;
+    }
+
+    .img-logo {
+        width: 55%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .con-form {
+        width: 90%;
+    }
+
+    .img-logo {
+        width: 65%;
+    }
+
+    .desc-form {
+        margin-top: 10px;
+    }
+
+    .con-form-username,
+    .con-form-password {
+        padding: 0 10px;
+    }
+
+    .input-username,
+    .input-password {
+        padding: 10px;
+        font-size: 18px;
+        color: #000000;
+    }
 }
