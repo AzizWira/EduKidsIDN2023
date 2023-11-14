@@ -1,0 +1,45 @@
+.head-content{
+    display: flex;
+    margin: 80px 0 0 0;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 30px;
+    border: 1px solid #C4C4C4;
+    gap: 110px;
+}
+
+.h-content-left{
+    max-width: 330px;
+    margin: 30px 23px;
+}
+
+.h-content-left img{
+    width: 100%;
+    height: auto;
+}
+
+.h-content-right{
+    /* max-width: 608px; */
+    margin: 88px 162px 88px 0px;
+}
+
+.h-content-right h1{
+    max-width: 506px;
+    color: #0D6C61;
+}
+
+.h-content-right p{
+    margin-top: 18px;
+    color: #797979;
+    font-size: 24px;
+}
+
+.login-button{
+    background-color: #E89C24;
+    color: white;
+    padding: 8px 22px;
+    margin-top: 18px;
+    font-size: 22px;
+    font-weight: 600;
+    border-radius: 30px;
+}
