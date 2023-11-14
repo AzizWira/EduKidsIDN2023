@@ -1,43 +1,101 @@
-.head-content{
+.head-content {
     display: flex;
     margin: 80px 0 0 0;
     align-items: center;
     justify-content: space-between;
     border-radius: 30px;
     border: 1px solid #C4C4C4;
-    gap: 110px;
+    gap: 80px;
 }
 
-.h-content-left{
+.h-content-left {
     max-width: 330px;
     margin: 30px 23px;
 }
 
-.h-content-left img{
+.h-content-left img {
     width: 100%;
     height: auto;
 }
 
-.h-content-right{
-    max-width: 608px;
-    margin: 88px 162px 88px 0px;
+.h-content-right {
+    width: 100%;
 }
 
-.h-content-right h1{
-    max-width: 406px;
+.h-content-right h1 {
     color: #0D6C61;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    max-width: 80%;
 }
 
-.h-content-right p{
+.h-content-right p {
     margin-top: 18px;
     color: #797979;
     font-size: 24px;
+    max-width: 80%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .head-content {
+        gap: 40px;
+    }
+
+    .h-content-right h1 {
+        font-size: 26px;
+    }
+
+    .h-content-right p {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .head-content {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px 20px 30px 20px;
+    }
+
+    .h-content-left {
+        width: 70%;
+        margin: 0px 23px 20px 0px;
+    }
+
+    .h-content-right h1 {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .h-content-right p {
+        text-align: center;
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .h-content-left {
+        width: 60%;
+        margin: 0px 23px 0px 0px;
+    }
+
+    .h-content-right h1 {
+        font-size: 24px;
+    }
+
+    .h-content-right p {
+        font-size: 20px;
+    }
 }
 
 /* education */
 
 .box-education {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     width: 100%;
     gap: 20px;
     margin-top: 82px;
@@ -45,13 +103,13 @@
 
 .box-education .box {
     width: 100%;
-    padding: 30px 70px;
+    padding: 35px 60px;
     border-radius: 30px;
     border: 1px solid #C4C4C4;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     position: relative;
     /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
 }
@@ -59,7 +117,7 @@
 .box-education .box p {
     color: #0D6C61;
     font-family: 'Poppins', sans-serif;
-    font-size: 26px;
+    font-size: 28px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -95,29 +153,42 @@
 
 @media only screen and (max-width: 1200px) {
     .box-education .box {
-        padding: 30px 50px;
+        padding: 30px 40px;
     }
 
     .box-education .box p {
         font-size: 24px;
     }
 
-    .box-education .box button{
+    .box-education .box button {
         margin-top: 20px;
     }
 }
 
 @media only screen and (max-width: 1000px) {
     .box-education .box {
-        padding: 30px 40px;
+        padding: 30px 20px;
     }
 
     .box-education .box p {
         font-size: 22px;
     }
 
-    .box-education .box button{
+    .box-education .box button {
         margin-top: 20px;
+        padding: 5px 15px;
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .box-education{
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 50px;
+    }
+
+    .box-education .box {
+        padding: 50px 20px;
     }
 }
 
@@ -126,11 +197,11 @@
         padding: 30px 20px;
     }
 
-    .box-education .box button{
+    .box-education .box button {
         margin-top: 20px;
     }
-    
-    .box-education .box button{
+
+    .box-education .box button {
         font-size: 18px;
         padding: 5px 15px;
         margin-top: 20px;
@@ -139,40 +210,32 @@
 
 @media only screen and (max-width: 600px) {
     .box-education {
-        flex-direction: column;
         gap: 20px;
-    }
-
-    .box-education .box {
-        padding: 30px 50px;
     }
 
     .box-education .box p {
         font-size: 22px;
     }
 
-    .box-education .box button{
+    .box-education .box button {
         margin-top: 20px;
     }
 }
 
 @media only screen and (max-width: 400px) {
+    .box-education {
+        margin-top: 30px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
     .box-education .box {
         padding: 30px 20px;
-    }
-
-    .box-education .box p {
-        font-size: 20px;
-    }
-
-    .box-education .box button{
-        margin-top: 20px;
     }
 }
 
 /* end education */
 
-.title-faq-quiz{
+.title-faq-quiz {
     font-size: 28px;
     color: #0D6C61;
     text-align: center;
@@ -181,5 +244,5 @@
 }
 
 /* faq */
-  
+
 /* end faq */

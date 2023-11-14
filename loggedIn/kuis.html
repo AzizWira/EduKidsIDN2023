@@ -4,8 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kuis EDUKIDS</title>
-    <link rel="stylesheet" href="../styling/QuizBeforeLogin.css" />
+    <link rel="stylesheet" href="../styling/kuis.css" />
     <link rel="stylesheet" href="../app.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   </head>
   <body>
     <nav>
@@ -19,13 +25,14 @@
           <label for="close-btn-nav" class="btn close-btn-nav"
             ><i class="fas fa-times"></i
           ></label>
-          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="index.html">Beranda</a></li>
           <li><a href="materi.html">Materi</a></li>
           <li><a href="kuis.html" class="active">Kuis</a></li>
           <li><a href="tentangkami.html">Tentang Kami</a></li>
-          <li><button>Login</button></li>
+          <a href="" class="nav-profile-list">Z</a>
         </ul>
         <div class="nav-right">
+          <a href="" class="nav-profile">Z</a>
           <label for="menu-btn-nav" class="btn menu-btn-nav"
             ><iconify-icon
               icon="pajamas:hamburger"
@@ -43,18 +50,40 @@
           <img src="../assets/gif-head-kuis.gif" alt="" />
         </div>
         <div class="h-content-right">
-          <h1>Maaf kamu belum bisa mengerjakan kuis, harap masuk terlebih dahulu</h1>
-          <button class="login-button">Login</button>
+          <h1>Kuis bahasa inggris yang bisa kamu kerjakan disini</h1>
+          <p>
+            Kami menyediakan uji kompetensi kuis bahasa inggris mulai dari mudah
+            sampai sulit.
+          </p>
         </div>
       </div>
+
+      <div class="box-education">
+        <div class="box">
+          <p>Level Kesulitan Mudah</p>
+          <button>Kerjakan Kuis!</button>
+          <img src="../assets/ellipseBg.png" alt="" />
+        </div>
+        <div class="box">
+          <p>Level Kesulitan Sedang</p>
+          <button>Kerjakan Kuis!</button>
+          <img src="../assets/ellipseBg.png" alt="" />
+        </div>
+        <div class="box">
+          <p>Level Kesulitan Sulit</p>
+          <button>Kerjakan Kuis!</button>
+          <img src="../assets/ellipseBg.png" alt="" />
+        </div>
       </div>
 
+      <p class="title-faq-quiz">Pertanyaan Umum</p>
+    </div>
     <footer>
       <img src="../assets/logo-footer.png" alt="" />
       <div class="line-footer"></div>
       <p>© 2023 Copyright EDUKIDS Mata Panda</p>
     </footer>
 
-     <script src="../logic/main.js"></script>
+    <script src="../logic/main.js"></script>
   </body>
 </html>
