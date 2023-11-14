@@ -1,0 +1,76 @@
+body{
+    background-image: url("../assets/background-kuis.jpg");
+    background-attachment: fixed;
+}
+
+.container-hasil{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-head-hasil{
+    font-size: 24px;
+    color: #0D6C61;
+    font-weight: 600;
+}
+
+.con-hasil{
+    background-color: white;
+    border: 1px solid #c4c4c4;
+    border-radius: 30px;
+    width: 820px;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    margin-top: 80px;
+}
+
+.hasil{
+    display: flex;
+    gap: 30px;
+}
+
+.hasil p{
+    font-size: 22px;
+    color: #797979;
+}
+
+.con-btn-hasil{
+    display: flex;
+    gap: 20px;
+    width: 820px;
+}
+
+.jumlah-jawaban{
+    margin-top: 14px;
+}
+
+.jumlah-benar{
+    color: #E89C24;
+}
+
+.jumlah-salah{
+    color: #D9534F;
+}
+
+.con-btn-hasil button{
+    background-color: white;
+    border: 1px solid #E89C24;
+    color: #E89C24;
+    font-size: 22px;
+    font-weight: 600;
+    width: 100%;
+    padding: 8px 0;
+    border-radius: 30px;
+    margin-top: 34px;
+}
+
+.con-btn-certi button:hover{
+    background-color: #E89C24;
+    color: white;
+    border: none;
+}
