@@ -23,7 +23,11 @@
           <li><a href="materi.html">Materi</a></li>
           <li><a href="kuis.html" class="active">Kuis</a></li>
           <li><a href="tentangkami.html">Tentang Kami</a></li>
-          <li><button>Login</button></li>
+          <li>
+            <button onclick="window.location.href = '../login.html'">
+              Login
+            </button>
+          </li>
         </ul>
         <div class="nav-right">
           <label for="menu-btn-nav" class="btn menu-btn-nav"
@@ -43,11 +47,18 @@
           <img src="../assets/gif-head-kuis.gif" alt="" />
         </div>
         <div class="h-content-right">
-          <h1>Maaf kamu belum bisa mengerjakan kuis, harap masuk terlebih dahulu</h1>
-          <button class="login-button"  onclick="window.location.href = '../login.html'">Login</button>
+          <h1>
+            Maaf kamu belum bisa mengerjakan kuis, harap masuk terlebih dahulu
+          </h1>
+          <button
+            class="login-button"
+            onclick="window.location.href = '../login.html'"
+          >
+            Login
+          </button>
         </div>
       </div>
-      </div>
+    </div>
 
     <footer>
       <img src="../assets/logo-footer.png" alt="" />
@@ -55,6 +66,6 @@
       <p>© 2023 Copyright EDUKIDS Mata Panda</p>
     </footer>
 
-     <script src="../logic/main.js"></script>
+    <script src="../logic/main.js"></script>
   </body>
 </html>
