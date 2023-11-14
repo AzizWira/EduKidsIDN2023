@@ -190,11 +190,6 @@ nav .logo-img {
         max-width: 80px;
     }
 
-    nav .logo-img {
-        width: 100%;
-        height: auto;
-    }
-
     .wrapper-nav .btn {
         display: flex;
     }

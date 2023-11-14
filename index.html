@@ -34,7 +34,9 @@
           <li><a href="pages/materi.html">Materi</a></li>
           <li><a href="pages/kuis.html">Kuis</a></li>
           <li><a href="pages/tentangkami.html">Tentang Kami</a></li>
-          <li onclick="window.location.href = 'login.html'"><button>Login</button></li>
+          <li onclick="window.location.href = 'login.html'">
+            <button>Login</button>
+          </li>
         </ul>
         <div class="nav-right">
           <label for="menu-btn-nav" class="btn menu-btn-nav"
@@ -67,7 +69,11 @@
 
       <div class="about">
         <div class="about1">
-          <img src="assets/animasi-tentangkami.gif" alt="" class="image-about" />
+          <img
+            src="assets/animasi-tentangkami.gif"
+            alt=""
+            class="image-about"
+          />
         </div>
         <div class="about2">
           <h2>Singkat Tentang Kami</h2>
@@ -109,9 +115,56 @@
         </p>
       </div>
 
-      <!-- <h2>Pertanyaan Umum</h2>
+      <h2>Testimoni</h2>
 
-      <div class="general-question"></div> -->
+      <div class="con-card-testimoni">
+        <div class="card-testimoni">
+          <div class="ellipse-profile">
+            W
+          </div>
+          <p class="name">Wiro Sableng</p>
+          <p>"Saya sekarang jago bahasa inggri setelah belajar disini."</p>
+        </div>
+        <div class="card-testimoni">
+          <div class="ellipse-profile">
+            K
+          </div>
+          <p class="name">Khoiru Rizal</p>
+          <p>"Materi EDUKIDS mudah dipahami, dan sangat menyenangkan"</p>
+        </div>
+        <div class="card-testimoni">
+          <div class="ellipse-profile">
+            Z
+          </div>
+          <p class="name">Zumar Ramadhan</p>
+          <p>"Terima Kasih atas ilmunya EDUKIDS, sangat bermanfaat."</p>
+        </div>
+      </div>
+
+      <h2>Pertanyaan Umum</h2>
+
+      <div class="general-question">
+        <div class="card-faq" onclick="toggleFAQ(this)">
+          <div class="question">
+            Bagaimana EDUKIDS berbeda dari sumber belajar bahasa Inggris
+            lainnya?
+            <span class="icon-faq">
+              <iconify-icon
+                icon="line-md:chevron-small-down"
+                style="color: #797979"
+                width="30"
+              ></iconify-icon>
+            </span>
+          </div>
+          <div class="text-faq">
+            <p>
+              EDUKIDS menyediakan pengalaman belajar bahasa Inggris yang
+              menyenangkan dan interaktif untuk anak-anak sekolah dasar dan
+              menengah pertama di Indonesia, dengan beragam materi dan kuis.
+            </p>
+          </div>
+        </div>
+      </div>
 
       <h2 class="title-contact">Kontak Kami</h2>
       <form class="contact-us">
@@ -125,12 +178,7 @@
         </div>
         <div class="right">
           <p>Pesan</p>
-          <textarea
-            name="pesan"
-            id=""
-            placeholder="Pesan"
-            required
-          ></textarea>
+          <textarea name="pesan" id="" placeholder="Pesan" required></textarea>
           <button type="submit">Kirim</button>
         </div>
       </form>
@@ -144,6 +192,20 @@
       <p>© 2023 Copyright EDUKIDS Mata Panda</p>
     </footer>
 
+    <script>
+      function toggleFAQ(card) {
+        const textFAQ = card.querySelector(".text-faq");
+        const chevronIcon = card.querySelector("iconify-icon");
+
+        if (textFAQ.style.display === "none" || !textFAQ.style.display) {
+          textFAQ.style.display = "block";
+          chevronIcon.classList.add("rotate180");
+        } else {
+          textFAQ.style.display = "none";
+          chevronIcon.classList.remove("rotate180");
+        }
+      }
+    </script>
     <script src="/logic/main.js"></script>
   </body>
 </html>
