@@ -45,6 +45,18 @@ input:focus {
     min-height: calc(100vh - 200px);
 }
 
+@media only screen and (max-width: 900px) {
+    .container {
+        padding: 20px 50px 50px 50px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+        padding: 20px 30px 50px 30px;
+    }
+}
+
 /* navbar */
 
 nav {
@@ -68,6 +80,7 @@ nav .wrapper-nav {
 .wrapper-nav .nav-links {
     display: inline-flex;
     gap: 30px;
+    align-items: center;
 }
 
 .wrapper-nav .nav-links .active {
@@ -95,6 +108,19 @@ nav .wrapper-nav {
 
 .nav-links li {
     list-style: none;
+}
+
+.nav-links li button {
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: #E89C24;
+    color: #FFF;
+    text-align: right;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .nav-links li a {
@@ -191,14 +217,6 @@ nav .logo-img {
 
 nav input {
     display: none;
-}
-
-.container {
-    max-width: 1440px;
-    padding: 20px 100px 100px 100px;
-    margin: 0 auto;
-    /* min-height: 65vh */
-    min-height: calc(100vh - 200px);
 }
 
 /* end navbar */

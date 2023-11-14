@@ -65,7 +65,7 @@ h2 {
 
 .banner2 {
     width: 50vw;
-    max-width: 509px;
+    max-width: 500px;
 }
 
 .banner2 img {
@@ -73,6 +73,104 @@ h2 {
     height: auto;
 }
 
+@media only screen and (max-width: 1200px) {
+    .banner {
+        padding: 40px 0;
+    }
+
+    .banner2 {
+        width: 50vw;
+        max-width: 350px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .banner1 .logo-banner {
+        font-size: 28px;
+    }
+
+    .banner1 .logo-banner img {
+        width: 50px;
+        height: auto;
+    }
+
+    .banner1 h1 {
+        font-size: 32px;
+        margin-top: 10px;
+    }
+
+    .banner1 button {
+        font-size: 18px;
+        padding: 5px 15px;
+        margin-top: 20px;
+    }
+
+    .banner2 {
+        width: 50vw;
+        max-width: 300px;
+    }
+}
+
+
+@media only screen and (max-width: 800px){
+    .banner {
+        padding: 30px 0;
+    }
+
+    .banner2 {
+        width: 50vw;
+        max-width: 250px;
+    }
+
+    .banner1 .logo-banner {
+        font-size: 25px;
+    }
+
+    .banner1 .logo-banner img {
+        width: 40px;
+        height: auto;
+    }
+
+    .banner1 h1 {
+        font-size: 26px;
+        margin-top: 10px;
+    }
+
+    .banner1 button {
+        font-size: 18px;
+        padding: 5px 15px;
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .banner{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .banner1{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .banner1 .logo-banner{
+        display: none;
+    }
+
+    .banner1 h1{
+        text-align: center;
+        font-size: 22px;
+    }
+    .banner2{
+        /* display: none; */
+    }   
+}
 /* end banner */
 
 /* start about */
@@ -125,6 +223,96 @@ h2 {
 .about2 button:hover {
     background: #ffbe56;
     color: #FFF;
+}
+
+@media only screen and (max-width: 1200px) {
+    .about {
+        padding: 40px 0;
+        gap: 60px;
+    }
+
+    .about2 {
+        max-width: 500px;
+    }
+
+    .about2 h2{
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .about2 {
+        max-width: 400px;
+    }
+
+    .about2 p {
+        font-size: 18px;
+    }
+
+    .about2 button {
+        font-size: 18px;
+        padding: 5px 15px;
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .about {
+        padding: 30px 0;
+        gap: 40px;
+    }
+    
+    .about2 {
+        max-width: 300px;
+    }
+
+    .about2 p {
+        font-size: 16px;
+    }
+
+    .about2 button {
+        font-size: 16px;
+        padding: 5px 15px;
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .about1 {
+        width: 40vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .about1 img {
+        width: 100%;
+        height: auto;
+    }
+
+    .about2 {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .about2 p {
+        font-size: 16px;
+    }
+
+    .about2 button {
+        font-size: 16px;
+        padding: 5px 15px;
+        margin-top: 20px;
+    }
 }
 
 /* end about */
@@ -185,9 +373,85 @@ h2 {
     position: absolute;
     bottom: 0;
     right: 0;
+    z-index: -1;
     border-radius: 0 0 30px 0;
-    /* width: 100px;
-    height: auto; */
+}
+
+@media only screen and (max-width: 1200px) {
+    .box-education .box {
+        padding: 30px 50px;
+    }
+
+    .box-education .box p {
+        font-size: 24px;
+    }
+
+    .box-education .box button{
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .box-education .box {
+        padding: 30px 40px;
+    }
+
+    .box-education .box p {
+        font-size: 22px;
+    }
+
+    .box-education .box button{
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .box-education .box {
+        padding: 30px 20px;
+    }
+
+    .box-education .box button{
+        margin-top: 20px;
+    }
+    
+    .box-education .box button{
+        font-size: 18px;
+        padding: 5px 15px;
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .box-education {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .box-education .box {
+        padding: 30px 50px;
+    }
+
+    .box-education .box p {
+        font-size: 22px;
+    }
+
+    .box-education .box button{
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .box-education .box {
+        padding: 30px 20px;
+    }
+
+    .box-education .box p {
+        font-size: 20px;
+    }
+
+    .box-education .box button{
+        margin-top: 20px;
+    }
 }
 
 /* end education */
@@ -278,12 +542,92 @@ h2 {
     margin-top: 20px;
 }
 
+@media only screen and (max-width: 1200px) {
+    .platform-user {
+        padding: 30px;
+    }
+
+    .platform-user h4 {
+        font-size: 20px;
+    }
+
+    .platform-user h5 {
+        font-size: 14px;
+    }
+
+    .platform-user p {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .platform-user {
+        padding: 30px;
+    }
+
+    .platform-user h4 {
+        font-size: 18px;
+    }
+
+    .platform-user h5 {
+        font-size: 14px;
+    }
+
+    .platform-user p {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .platform-user {
+        padding: 30px;
+    }
+
+    .photo-profile {
+        margin-bottom: 20px;
+    }
+
+    .photo-profile .ellipse {
+        width: 50px;
+        height: 50px;
+    }
+
+    .platform-user h4 {
+        font-size: 16px;
+    }
+
+    .platform-user h5 {
+        font-size: 14px;
+    }
+
+    .platform-user p {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .platform-user {
+        padding: 30px;
+    }
+
+    .platform-user h4 {
+        font-size: 16px;
+    }
+
+    .platform-user h5 {
+        font-size: 14px;
+    }
+
+    .platform-user p {
+        font-size: 16px;
+    }
+}
 /* end platform user */
 
 
 /* contact us */
 
-.title-contact{
+.title-contact {
     text-align: center;
     margin-top: 80px;
     margin-bottom: 40px;
@@ -327,7 +671,7 @@ h2 {
     line-height: normal;
 }
 
-.contact-us .right textarea{
+.contact-us .right textarea {
     resize: none;
     width: 100%;
     border-radius: 10px;
@@ -341,7 +685,7 @@ h2 {
     height: 50%;
 }
 
-.contact-us .right button{
+.contact-us .right button {
     padding: 8px 20px;
     border-radius: 40px;
     background: #E89C24;
@@ -360,3 +704,93 @@ h2 {
     background: #ffbe56;
     color: #FFF;
 }
+
+@media only screen and (max-width: 1200px) {
+    .contact-us {
+        padding: 20px 20px;
+    }
+
+    .contact-us .left p, .contact-us .right p {
+        font-size: 16px;
+    }
+
+    .contact-us .left input {
+        font-size: 16px;
+    }
+
+    .contact-us .right textarea {
+        font-size: 16px;
+    }
+
+    .contact-us .right button {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .contact-us {
+        padding: 20px 20px;
+    }
+
+    .contact-us .left p, .contact-us .right p {
+        font-size: 16px;
+    }
+
+    .contact-us .left input {
+        font-size: 16px;
+    }
+
+    .contact-us .right textarea {
+        font-size: 16px;
+    }
+
+    .contact-us .right button {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .contact-us {
+        padding: 20px 20px;
+    }
+
+    .title-contact{
+        margin-top: 50px;
+        margin-bottom: 30px;
+        font-size: 22px;
+    }
+
+    .contact-us .left p, .contact-us .right p {
+        font-size: 14px;
+    }
+
+    .contact-us .left input {
+        font-size: 14px;
+    }
+
+    .contact-us .right textarea {
+        font-size: 14px;
+    }
+
+    .contact-us .right button {
+        font-size: 16px;
+        margin-top: 20px;   
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .contact-us {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .contact-us .left input {
+        width: 100%;
+    }
+
+    .contact-us .right textarea {
+        width: 100%;
+        height: 100px;
+    }
+}
+

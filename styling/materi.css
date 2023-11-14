@@ -89,50 +89,6 @@ h4{
     line-height: normal;
 }
 
-
-
-/* .nav-content .list-content{
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    padding: 10px 11px;
-} */
-
-/* .nav-content .list-content li{
-    display: inline-flex;
-    padding: 10px 20px;
-    background-color: #F5F5F5;
-    color: #797979;
-    text-decoration: none;
-    border: none;
-    border-radius: 10px;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    font-family: 'Poppins', sans-serif;
-}
-
-.nav-content .list-content li{
-    list-style: none;
-}
-
-.nav-content .list-content li.active{
-    display: inline-flex;
-    padding: 10px 20px;
-    background-color: #E89C24;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    border-radius: 10px;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    font-family: 'Poppins', sans-serif;
-} */
-
 /* end navigation-section */
 
 .section{
