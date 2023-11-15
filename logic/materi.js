@@ -207,6 +207,41 @@ data_percakapan = [
     penjelasan:
       "Dalam percakapan berkenalan, kita pertama-tama menyebutkan nama kita dan kemudian merespons dengan kalimat sambutan. 'Nice to meet you' adalah ungkapan umum untuk menunjukkan senangnya bertemu seseorang.",
   },
+  {
+    tema: "Meminta dan Memberikan Informasi Pribadi (Asking and Giving Personal Information):",
+    a: "Excuse me, what's your full name? (Permisi, apa nama lengkapmu?)",
+    b: "I'm John Smith. (Saya John Smith.)",
+    penjelasan:
+      "Dalam situasi ini, seseorang meminta informasi pribadi tentang nama lengkap. Orang lain kemudian memberikan jawaban dengan memberikan nama lengkapnya.",
+  },
+  {
+    tema: "Menanyakan Profesi (Asking about Occupation):",
+    a: "What do you do for a living? (Apa pekerjaanmu?)",
+    b: "I'm a teacher. (Saya seorang guru.)",
+    penjelasan:
+      "Dalam percakapan ini, seseorang menanyakan profesi atau pekerjaan dari lawan bicaranya, dan orang tersebut memberikan informasi tentang pekerjaannya.",
+  },
+  {
+    tema: "Bicara tentang Hobi (Talking about Hobbies):",
+    a: "Do you have any hobbies? (Apakah kamu punya hobi?)",
+    b: "Yes, I love playing the guitar in my free time. (Ya, saya suka bermain gitar di waktu luang saya.)",
+    penjelasan:
+      "Dalam konteks ini, pertanyaan diajukan untuk mengetahui apakah lawan bicara memiliki hobi. Orang tersebut kemudian memberikan informasi tentang hobi mereka.",
+  },
+  {
+    tema: "Berbicara tentang Pengalaman Perjalanan (Talking about Travel Experience):",
+    a: "Have you ever been to Paris? (Apakah kamu pernah pergi ke Paris?)",
+    b: "Yes, I visited Paris last summer. It was an amazing experience. (Ya, saya mengunjungi Paris musim panas lalu. Pengalaman yang luar biasa.)",
+    penjelasan:
+      "Pertanyaan ini mengarah pada percakapan tentang pengalaman perjalanan. Orang tersebut memberikan informasi bahwa mereka pernah mengunjungi Paris dan mengekspresikan kesan positif tentang pengalaman tersebut.",
+  },
+  {
+    tema: "Merencanakan Pertemuan (Planning to Meet):",
+    a: "Would you like to grab a coffee sometime? (Maukah kamu minum kopi bersama suatu saat nanti?)",
+    b: "Sure, that sounds like a great idea. (Tentu, itu terdengar seperti ide yang bagus.)",
+    penjelasan:
+      "Dalam situasi ini, seseorang mengajukan ajakan untuk bertemu di waktu yang belum ditentukan, dan lawan bicara setuju dengan ajakan tersebut.",
+  },
 ];
 
 const percakapanContainer = document.getElementById("percakapan");
@@ -239,13 +274,27 @@ percakapanContainer.innerHTML = fillPercakapan.join("");
 data_pengucapan = [
   {
     index: 0,
-    teks: "“Hello, My name is Jenni”",
+    teks: "“Hello, My name is Jennie”",
     audio: "../assets/audio/Hello my name is jen.mp3",
+    arti: "Halo, nama saya Jennie",
   },
   {
     index: 1,
-    teks: "“Hello, My name is Jenni”",
+    teks: "“Excuse me, can i try it on?”",
     audio: "../assets/audio/Excuse me can i try it on.mp3",
+    arti: "Permisi, bolehkah saya mencobanya?",
+  },
+  {
+    index: 2,
+    teks: "“Can you help me?”",
+    audio: "../assets/audio/Can you help me.mp3",
+    arti: "Bisakah kamu membantuku?",
+  },
+  {
+    index: 3,
+    teks: "“You're beautifull”",
+    audio: "../assets/audio/You re beautifull.mp3",
+    arti: "Kamu cantik",
   },
 ];
 
@@ -255,6 +304,7 @@ const fillPengucapan = data_pengucapan.map(
   (data) => `
   <div class="fill">
   <h4>${data.teks}</h4>
+  <p>${data.arti}</p>
   <div class="sound">
     <img src="../assets/btn_play_sound.svg" alt="" class="btn-audio" data-index="${data.index}"/>
     <h4>Dengarkan suara berikut</h4>
@@ -284,12 +334,42 @@ function playAudio(event) {
 // end percakapan
 
 // start kalimat
-data_kalimat = [
+const data_kalimat = [
   {
     judul: "Subjek dan Predikat:",
-    isi: "Setiap kalimat dalam bahasa Inggris memiliki dua komponen utama:subjek (subject) dan predikat (predicate). Subjek adalah apa atau siapa yang kalimat itu bicarakan, dan predikat adalah tindakan atau keadaan yang dilakukan subjek.",
+    isi: "Setiap kalimat dalam bahasa Inggris memiliki dua komponen utama: subjek (subject) dan predikat (predicate). Subjek adalah apa atau siapa yang kalimat itu bicarakan, dan predikat adalah tindakan atau keadaan yang dilakukan subjek.",
     contoh:
-      "Subjek: She (Dia) Predikat: is reading a book (sedang membaca sebuah buku).",
+      "Subjek: She (Dia) <br> Predikat: is reading a book (sedang membaca sebuah buku).",
+  },
+  {
+    judul: "Objek:",
+    isi: "Objek adalah bagian dari kalimat yang menerima tindakan dari predikat. Objek memberikan informasi tambahan tentang apa atau siapa yang terlibat dalam tindakan tersebut.",
+    contoh:
+      "Subjek: I (Saya) <br> Predikat: bought (membeli) <br> Objek: a new laptop (sebuah laptop baru).",
+  },
+  {
+    judul: "Keterangan Waktu:",
+    isi: "Keterangan waktu memberikan informasi tentang kapan suatu tindakan terjadi. Hal ini membantu konteks waktu dalam kalimat.",
+    contoh:
+      "Subjek: They (Mereka) <br> Predikat: will go (akan pergi) <br> Keterangan Waktu: tomorrow (besok).",
+  },
+  {
+    judul: "Keterangan Tempat:",
+    isi: "Keterangan tempat memberikan informasi tentang di mana suatu tindakan terjadi. Ini membantu memberikan konteks lokasi dalam kalimat.",
+    contoh:
+      "Subjek: The party (Pesta) <br> Predikat: is happening (sedang berlangsung) <br> Keterangan Tempat: at the beach (di pantai).",
+  },
+  {
+    judul: "Kalimat Tanya:",
+    isi: "Untuk membentuk kalimat tanya, susunlah struktur kalimat dengan membalikkan posisi subjek dan predikat, atau tambahkan kata tanya seperti 'what,' 'where,' 'when,' 'how,' dan sebagainya di awal kalimat.",
+    contoh:
+      "Subjek: You (Anda) <br> Predikat: are going (sedang pergi) <br> Kalimat Tanya: Are you going to the party? (Apakah Anda pergi ke pesta?)",
+  },
+  {
+    judul: "Kalimat Perintah:",
+    isi: "Kalimat perintah mengandung perintah atau instruksi. Struktur kalimat ini sering kali tidak memerlukan subjek dan menggunakan bentuk dasar kata kerja.",
+    contoh:
+      "Perintah: Close the door. (Tutup pintunya.) <br> Perintah: Please sit down. (Silakan duduk.)",
   },
 ];
 
@@ -302,7 +382,7 @@ const fillKalimat = data_kalimat.map(
   <p>
     ${data.isi}.
   </p>
-  <p>Contoh :</p>
+  <p class="contoh-pembentukan-kalimat">Contoh :</p>
   <p>
     ${data.contoh}
   </p>
