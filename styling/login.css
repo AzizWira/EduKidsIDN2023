@@ -136,22 +136,22 @@
 
 .button-section .btn-1 button{
     width: 100%;
-    background-color: #FFFFFF;
+    background-color: #E89C24;
     border-radius: 40px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
+    border: none;
     font-size: 20px;
-    color: #E89C24;
-    border: 1px solid #E89C24;
+    color: #ffff;
     cursor: pointer;
     padding: 8px 26px;
     transition: 0.3s ease-in-out;
+    margin-top: 12px;
 }
 
 .button-section .btn-1 button:hover{
-    background: #E89C24;
-    color: #FFFFFF;
+    background: #ffbe56;
 }
 
 .button-section .btn-2 button {
@@ -222,4 +222,9 @@
         font-size: 18px;
         color: #000000;
     }
+}
+
+.text-daftar{
+    font-family: 'Poppins', sans-serif;
+    padding: 6px 0;
 }

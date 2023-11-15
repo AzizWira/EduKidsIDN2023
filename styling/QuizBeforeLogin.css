@@ -7,6 +7,7 @@
     justify-content: space-between;
     border-radius: 30px;
     border: 1px solid #C4C4C4;
+    gap: 62px;
 }
 
 .h-content-left {
@@ -32,7 +33,7 @@
 .login-button {
     background-color: #E89C24;
     color: white;
-    padding: 8px 22px;
+    padding: 8px 42px;
     margin-top: 18px;
     font-size: 22px;
     font-weight: 600;

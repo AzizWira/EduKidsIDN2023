@@ -61,22 +61,51 @@
       <div class="box-education">
         <div class="box">
           <p>Level Kesulitan Mudah</p>
-          <button onclick="window.location.href = 'kuis-mudah.html'">Kerjakan Kuis!</button>
+          <button onclick="window.location.href = 'kuis-mudah.html'">
+            Kerjakan Kuis!
+          </button>
           <img src="../assets/ellipseBg.png" alt="" />
         </div>
         <div class="box">
           <p>Level Kesulitan Sedang</p>
-          <button onclick="window.location.href = 'kuis-sedang.html'">Kerjakan Kuis!</button>
+          <button onclick="window.location.href = 'kuis-sedang.html'">
+            Kerjakan Kuis!
+          </button>
           <img src="../assets/ellipseBg.png" alt="" />
         </div>
         <div class="box">
           <p>Level Kesulitan Sulit</p>
-          <button onclick="window.location.href = 'kuis-sulit.html'">Kerjakan Kuis!</button>
+          <button onclick="window.location.href = 'kuis-sulit.html'">
+            Kerjakan Kuis!
+          </button>
           <img src="../assets/ellipseBg.png" alt="" />
         </div>
       </div>
 
       <p class="title-faq-quiz">Pertanyaan Umum</p>
+
+      <div class="general-question">
+        <div class="card-faq" onclick="toggleFAQ(this)">
+          <div class="question">
+            Bagaimana EDUKIDS berbeda dari sumber belajar bahasa Inggris
+            lainnya?
+            <span class="icon-faq">
+              <iconify-icon
+                icon="line-md:chevron-small-down"
+                style="color: #797979"
+                width="30"
+              ></iconify-icon>
+            </span>
+          </div>
+          <div class="text-faq">
+            <p>
+              EDUKIDS menyediakan pengalaman belajar bahasa Inggris yang
+              menyenangkan dan interaktif untuk anak-anak sekolah dasar dan
+              menengah pertama di Indonesia, dengan beragam materi dan kuis.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
     <footer>
       <div class="img">
@@ -86,6 +115,20 @@
       <p>© 2023 Copyright EDUKIDS Mata Panda</p>
     </footer>
 
+    <script>
+      function toggleFAQ(card) {
+        const textFAQ = card.querySelector(".text-faq");
+        const chevronIcon = card.querySelector("iconify-icon");
+
+        if (textFAQ.style.display === "none" || !textFAQ.style.display) {
+          textFAQ.style.display = "block";
+          chevronIcon.classList.add("rotate180");
+        } else {
+          textFAQ.style.display = "none";
+          chevronIcon.classList.remove("rotate180");
+        }
+      }
+    </script>
     <script src="../logic/main.js"></script>
   </body>
 </html>

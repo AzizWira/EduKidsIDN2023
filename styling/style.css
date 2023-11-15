@@ -11,7 +11,6 @@ h2 {
 }
 
 /*  */
-
 .con-card-testimoni {
     width: 100%;
     display: flex;
@@ -171,6 +170,16 @@ h2 {
 .card-faq .text-faq {
     margin-top: 10px;
     display: none;
+}
+
+.text-faq{
+    font-size: 22px;
+    color: #797979;
+}
+
+.question{
+    font-size: 22px;
+    color: #4b4b4b;
 }
 
 .rotate180 {
