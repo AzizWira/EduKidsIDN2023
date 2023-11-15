@@ -10,6 +10,15 @@ h2 {
     text-align: center;
 }
 
+h1{
+    color: #0D6C61;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
 /*  */
 .con-card-testimoni {
     width: 100%;
