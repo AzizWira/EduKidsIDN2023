@@ -238,8 +238,14 @@ percakapanContainer.innerHTML = fillPercakapan.join("");
 // start pengucapan
 data_pengucapan = [
   {
-    teks: "“Hello, My name is Wira Widodo”",
-    perintah: "Dengarkan suara berikut",
+    index: 0,
+    teks: "“Hello, My name is Jenni”",
+    audio: "../assets/audio/Hello my name is jen.mp3",
+  },
+  {
+    index: 1,
+    teks: "“Hello, My name is Jenni”",
+    audio: "../assets/audio/Excuse me can i try it on.mp3",
   },
 ];
 
@@ -250,14 +256,31 @@ const fillPengucapan = data_pengucapan.map(
   <div class="fill">
   <h4>${data.teks}</h4>
   <div class="sound">
-    <img src="../assets/btn_play_sound.svg" alt="" />
-    <h4>${data.perintah}</h4>
+    <img src="../assets/btn_play_sound.svg" alt="" class="btn-audio" data-index="${data.index}"/>
+    <h4>Dengarkan suara berikut</h4>
   </div>
 </div>
     `
 );
 
 pengucapanContainer.innerHTML = fillPengucapan.join("");
+
+// Tambahkan event listener untuk setiap tombol audio
+const audioButtons = document.querySelectorAll(".btn-audio");
+audioButtons.forEach((button) => {
+  button.addEventListener("click", playAudio);
+});
+
+function playAudio(event) {
+  const index = event.target.getAttribute("data-index");
+  const audioPath = data_pengucapan[index].audio;
+
+  // Buat elemen audio
+  const audioElement = new Audio(audioPath);
+
+  // Putar audio
+  audioElement.play();
+}
 // end percakapan
 
 // start kalimat
@@ -275,7 +298,7 @@ const kalimatContainer = document.getElementById("pembentukan-kalimat");
 const fillKalimat = data_kalimat.map(
   (data, index) => `
   <div class="fill">
-  <h4>${index+1}. <span>${data.judul}</span></h4>
+  <h4>${index + 1}. <span>${data.judul}</span></h4>
   <p>
     ${data.isi}.
   </p>
