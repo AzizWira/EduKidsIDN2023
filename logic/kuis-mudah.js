@@ -9,77 +9,77 @@ const card2 = document.getElementById("card-2");
 const card3 = document.getElementById("card-3");
 
 let questions = [
-  {
-    question: "What is shown in the picture?",
-    image: "../assets/assets-mudah/cat.jpg",
-    answers: [
-      { option: "Cat", correct: true },
-      { option: "Dog", correct: false },
-      { option: "Bird", correct: false },
-      { option: "Fish", correct: false },
-    ],
-  },
-  // question strowbery
-  {
-    question: "What is shown in the picture?",
-    image: "../assets/assets-mudah/apple.jpg",
-    answers: [
-      { option: "Apple", correct: true },
-      { option: "Strowbery", correct: false },
-      { option: "Banana", correct: false },
-      { option: "Orange", correct: false },
-    ],
-  },
-  {
-    question: "What is this vehicle called?",
-    image: "../assets/assets-mudah/motorcycle.jpg",
-    answers: [
-      { option: "Car", correct: false },
-      { option: "Bicycle", correct: false },
-      { option: "Motorcycle", correct: true },
-      { option: "Bus", correct: false },
-    ],
-  },
-  {
-    question: "What flies in the sky?",
-    image: "../assets/assets-mudah/plane.jpg",
-    answers: [
-      { option: "Bird", correct: false },
-      { option: "Butterfly", correct: false },
-      { option: "Plane", correct: true },
-      { option: "Kite", correct: false },
-    ],
-  },
-  {
-    question: "What is this traditional Indonesian vehicle?",
-    image: "../assets/assets-mudah/becak.jpg",
-    answers: [
-      { option: "Car", correct: false },
-      { option: "Bicycle", correct: false },
-      { option: "Motorcycle", correct: false },
-      { option: "Becak", correct: true },
-    ],
-  },
-  {
-    question: "What is this person doing?",
-    image: "../assets/assets-mudah/work.svg",
-    answers: [
-      { option: "Eating", correct: false },
-      { option: "Sleeping", correct: false },
-      { option: "Working", correct: true },
-      { option: "Playing", correct: false },
-    ],
-  },
-  {
-    question: "What is this person doing?",
-    image: "../assets/assets-mudah/singing.svg",
-    answers: [
-      { option: "Talking", correct: false },
-      { option: "Reading", correct: false },
-      { option: "Singing", correct: true },
-      { option: "Dancing", correct: false },
-    ],
-  },
+    // {
+    //   question: "What is shown in the picture?",
+    //   image: "../assets/assets-mudah/cat.jpg",
+    //   answers: [
+    //     { option: "Cat", correct: true },
+    //     { option: "Dog", correct: false },
+    //     { option: "Bird", correct: false },
+    //     { option: "Fish", correct: false },
+    //   ],
+    // },
+    // // question strowbery
+    // {
+    //   question: "What is shown in the picture?",
+    //   image: "../assets/assets-mudah/apple.jpg",
+    //   answers: [
+    //     { option: "Apple", correct: true },
+    //     { option: "Strowbery", correct: false },
+    //     { option: "Banana", correct: false },
+    //     { option: "Orange", correct: false },
+    //   ],
+    // },
+    // {
+    //   question: "What is this vehicle called?",
+    //   image: "../assets/assets-mudah/motorcycle.jpg",
+    //   answers: [
+    //     { option: "Car", correct: false },
+    //     { option: "Bicycle", correct: false },
+    //     { option: "Motorcycle", correct: true },
+    //     { option: "Bus", correct: false },
+    //   ],
+    // },
+    // {
+    //   question: "What flies in the sky?",
+    //   image: "../assets/assets-mudah/plane.jpg",
+    //   answers: [
+    //     { option: "Bird", correct: false },
+    //     { option: "Butterfly", correct: false },
+    //     { option: "Plane", correct: true },
+    //     { option: "Kite", correct: false },
+    //   ],
+    // },
+    // {
+    //   question: "What is this traditional Indonesian vehicle?",
+    //   image: "../assets/assets-mudah/becak.jpg",
+    //   answers: [
+    //     { option: "Car", correct: false },
+    //     { option: "Bicycle", correct: false },
+    //     { option: "Motorcycle", correct: false },
+    //     { option: "Becak", correct: true },
+    //   ],
+    // },
+    {
+      question: "What is this person doing?",
+      image: "../assets/assets-mudah/work.svg",
+      answers: [
+        { option: "Eating", correct: false },
+        { option: "Sleeping", correct: false },
+        { option: "Working", correct: true },
+        { option: "Playing", correct: false },
+      ],
+    },
+    {
+      question: "What is this person doing?",
+      image: "../assets/assets-mudah/singing.svg",
+      answers: [
+        { option: "Talking", correct: false },
+        { option: "Reading", correct: false },
+        { option: "Singing", correct: true },
+        { option: "Dancing", correct: false },
+      ],
+    },
   {
     question: "What is this person doing?",
     image: "../assets/assets-mudah/driving.svg",
@@ -112,6 +112,49 @@ let questions = [
   },
 ];
 
+function highlightCorrectAnswer() {
+  const correctOptionIndex = questions[currentQuestion].answers.findIndex(
+    (answer) => answer.correct === true
+  );
+  const correctButton = document.querySelector(
+    `#option${correctOptionIndex + 1}`
+  );
+  correctButton.classList.add("correct");
+}
+
+function highlightCorrectAnswerNotAnswer() {
+  const correctOptionIndex = questions[currentQuestion].answers.findIndex(
+    (answer) => answer.correct === true
+  );
+  const correctButton = document.querySelector(
+    `#option${correctOptionIndex + 1}`
+  );
+  correctButton.classList.add("overtime");
+}
+
+function highlightinCorrectAnswer(isCorrect, selectedOption) {
+  const correctOptionIndexTrue = questions[currentQuestion].answers.findIndex(
+    (answer) => answer.correct === true
+  );
+
+  const correctButtonTrue = document.querySelector(
+    `#option${correctOptionIndexTrue + 1}`
+  );
+
+  correctButtonTrue.classList.add("correct");
+
+  if (!isCorrect) {
+    const selectedButton = document.querySelector(
+      `#option${selectedOption + 1}`
+    );
+    selectedButton.classList.add("incorrect");
+  }
+
+  //   if (!isCorrect) {
+  //     correctButton.classList.add("incorrect");
+  //   }
+}
+
 function startTimer(duration, display) {
   clearInterval(timer); // Menghentikan timer sebelumnya (jika ada)
 
@@ -136,16 +179,7 @@ function startTimer(duration, display) {
 
     if (diff <= 0) {
       handleUnansweredQuestions();
-      highlightCorrectAnswer(); // Show the correct answer
-      disableButtons();
-      setTimeout(() => {
-        currentQuestion++;
-        if (currentQuestion < questions.length) {
-          loadQuestion();
-        } else {
-          displayResult();
-        }
-      }, 1500);
+      selectAnswer(false, undefined); // Panggil fungsi selectAnswer dengan jawaban salah
     }
   }
 
@@ -184,33 +218,34 @@ function loadQuestion() {
 }
 
 function selectAnswer(isCorrect, selectedOption) {
-  clearInterval(timer);
+    clearInterval(timer);
 
-  if (isCorrect) {
-    score++;
-  } else {
-    wrongAnswer++;
-  }
+    if (selectedOption === undefined) {
+        console.log(selectedOption);
+        highlightCorrectAnswerNotAnswer();
+        wrongAnswer++;
+      } else if (selectedOption !== undefined && !isCorrect) {
+        console.log(selectedOption);
+        highlightinCorrectAnswer(isCorrect, selectedOption);
+        wrongAnswer++;
+      } else if (selectedOption !== undefined && isCorrect) {
+        console.log(selectedOption);
+        highlightCorrectAnswer();
+        score++;
+      }
 
-  disableButtons();
-  highlightOptions(isCorrect, selectedOption);
-
-  // Highlight the correct answer after a delay
-  setTimeout(() => {
-    highlightCorrectAnswer(); // Highlight the correct answer
-  }, 500);
-
-  // Move to the next question after a delay
-  setTimeout(() => {
-    currentQuestion++;
-
-    if (currentQuestion < questions.length) {
-      loadQuestion();
-    } else {
-      handleUnansweredQuestions();
-      displayResult();
-    }
-  }, 1000);
+    disableButtons();
+  
+    setTimeout(() => {
+      currentQuestion++;
+  
+      if (currentQuestion < questions.length) {
+        loadQuestion();
+      } else {
+        handleUnansweredQuestions();
+        displayResult();
+      }
+    }, 1500);
 }
 
 function disableButtons() {
@@ -218,18 +253,6 @@ function disableButtons() {
   buttons.forEach((button) => {
     button.disabled = true;
   });
-}
-
-function highlightOptions(isCorrect, selectedOption) {
-  const correctButton = document.querySelector(`#option${selectedOption + 1}`);
-  correctButton.classList.add("correct");
-
-  if (!isCorrect) {
-    const selectedButton = document.querySelector(
-      `#option${selectedOption + 1}`
-    );
-    selectedButton.classList.add("incorrect");
-  }
 }
 
 function displayResult() {
@@ -277,18 +300,12 @@ function submitQuiz() {
 }
 
 function handleUnansweredQuestions() {
-  unansweredQuestions += questions.length - currentQuestion;
+  if (!timer) {
+    unansweredQuestions += questions.length - currentQuestion;
+  }
 }
 
 window.addEventListener("unload", handleUnansweredQuestions);
-
-function highlightCorrectAnswer() {
-  const correctIndex = questions[currentQuestion].answers.findIndex(
-    (answer) => answer.correct
-  );
-  const correctButton = document.querySelector(`#option${correctIndex + 1}`);
-  correctButton.classList.add("correct");
-}
 
 setTimeout(() => {
   loadQuestion();

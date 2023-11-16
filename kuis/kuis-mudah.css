@@ -317,3 +317,14 @@
     background-color: #FF7975;
     color: #fff;
 }
+
+/* Styles for overtime answer */
+.con-btn-answer button.overtime {
+    color: #4B4B4B;
+    background: #EEF5FF;
+}
+
+.con-btn-answer button.overtime span:nth-child(1) {
+    background-color: #7C93C3;
+    color: #fff;
+}
