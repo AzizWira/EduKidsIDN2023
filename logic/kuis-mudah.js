@@ -113,6 +113,8 @@ let questions = [
 ];
 
 function startTimer(duration, display) {
+  clearInterval(timer); // Menghentikan timer sebelumnya (jika ada)
+
   let start = Date.now(),
     diff,
     hours,
@@ -134,7 +136,7 @@ function startTimer(duration, display) {
 
     if (diff <= 0) {
       handleUnansweredQuestions();
-      submitQuiz();
+      selectAnswer(false, 0); // Panggil fungsi selectAnswer dengan jawaban salah
     }
   }
 
@@ -143,9 +145,7 @@ function startTimer(duration, display) {
 }
 
 function loadQuestion() {
-  let question = questions[currentQuestion].question;
-  let image = questions[currentQuestion].image;
-  let answers = questions[currentQuestion].answers;
+  let question = questions[currentQuestion];
   let indexQuestion = document.getElementById("index-question");
   let questionElement = document.getElementById("question");
   let answersElement = document.getElementById("answers");
@@ -155,18 +155,18 @@ function loadQuestion() {
   const answerLetters = ["A", "B", "C", "D"];
 
   indexQuestion.innerHTML = `Soal ${currentQuestion + 1} / ${questions.length}`;
-  questionElement.innerHTML = question;
-  questionImageElement.src = image;
+  questionElement.innerHTML = question.question;
+  questionImageElement.src = question.image;
   answersElement.innerHTML = "";
 
   startTimer(3, timerDisplay); // set waktu
 
-  for (let i = 0; i < answers.length; i++) {
+  for (let i = 0; i < question.answers.length; i++) {
     answersElement.innerHTML += `
         <button id="option${i + 1}" class="btn" onclick="selectAnswer(${
-      answers[i].correct
+      question.answers[i].correct
     }, ${i})">
-          <span>${answerLetters[i]}</span><span>${answers[i].option}</span>
+          <span>${answerLetters[i]}</span><span>${question.answers[i].option}</span>
         </button>
       `;
   }
@@ -261,7 +261,6 @@ function submitQuiz() {
 
 function handleUnansweredQuestions() {
   unansweredQuestions += questions.length - currentQuestion;
-  wrongAnswer += unansweredQuestions;
 }
 
 window.addEventListener("unload", handleUnansweredQuestions);
