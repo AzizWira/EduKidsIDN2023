@@ -204,7 +204,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    color: #797979;
+    color: #303030;
 }
 
 /*  */
@@ -296,3 +296,24 @@
 
 /*  */
 
+/* Styles for correct answer */
+.con-btn-answer button.correct {
+    color: #4B4B4B;
+    background: #BAFFC1;
+}
+
+.con-btn-answer button.correct span:nth-child(1) {
+    background-color: #37FF4B;
+    color: #fff;
+}
+
+/* Styles for incorrect answer */
+.con-btn-answer button.incorrect {
+    color: #4B4B4B;
+    background: #FFD2D1;
+}
+
+.con-btn-answer button.incorrect span:nth-child(1) {
+    background-color: #FF7975;
+    color: #fff;
+}

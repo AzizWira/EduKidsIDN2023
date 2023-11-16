@@ -136,7 +136,16 @@ function startTimer(duration, display) {
 
     if (diff <= 0) {
       handleUnansweredQuestions();
-      selectAnswer(false, 0); // Panggil fungsi selectAnswer dengan jawaban salah
+      highlightCorrectAnswer(); // Show the correct answer
+      disableButtons();
+      setTimeout(() => {
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+          loadQuestion();
+        } else {
+          displayResult();
+        }
+      }, 1500);
     }
   }
 
@@ -166,7 +175,9 @@ function loadQuestion() {
         <button id="option${i + 1}" class="btn" onclick="selectAnswer(${
       question.answers[i].correct
     }, ${i})">
-          <span>${answerLetters[i]}</span><span>${question.answers[i].option}</span>
+          <span>${answerLetters[i]}</span><span>${
+      question.answers[i].option
+    }</span>
         </button>
       `;
   }
@@ -184,6 +195,12 @@ function selectAnswer(isCorrect, selectedOption) {
   disableButtons();
   highlightOptions(isCorrect, selectedOption);
 
+  // Highlight the correct answer after a delay
+  setTimeout(() => {
+    highlightCorrectAnswer(); // Highlight the correct answer
+  }, 500);
+
+  // Move to the next question after a delay
   setTimeout(() => {
     currentQuestion++;
 
@@ -193,7 +210,7 @@ function selectAnswer(isCorrect, selectedOption) {
       handleUnansweredQuestions();
       displayResult();
     }
-  }, 150);
+  }, 1000);
 }
 
 function disableButtons() {
@@ -264,6 +281,14 @@ function handleUnansweredQuestions() {
 }
 
 window.addEventListener("unload", handleUnansweredQuestions);
+
+function highlightCorrectAnswer() {
+  const correctIndex = questions[currentQuestion].answers.findIndex(
+    (answer) => answer.correct
+  );
+  const correctButton = document.querySelector(`#option${correctIndex + 1}`);
+  correctButton.classList.add("correct");
+}
 
 setTimeout(() => {
   loadQuestion();
