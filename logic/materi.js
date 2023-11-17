@@ -292,7 +292,7 @@ data_pengucapan = [
   },
   {
     index: 3,
-    teks: "“You're beautifull”",
+    teks: "“You're beautiful”",
     audio: "../assets/audio/You re beautifull.mp3",
     arti: "Kamu cantik",
   },
