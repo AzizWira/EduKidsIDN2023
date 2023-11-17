@@ -7,110 +7,63 @@ const questionarea = document.getElementById("question-area");
 const card1 = document.getElementById("card-1");
 const card2 = document.getElementById("card-2");
 const card3 = document.getElementById("card-3");
+const cardsound = document.getElementById("card-sound");
 
 let questions = [
-    {
-      question: "What is shown in the picture?",
-      image: "../assets/assets-mudah/cat.jpg",
-      answers: [
-        { option: "Cat", correct: true },
-        { option: "Dog", correct: false },
-        { option: "Bird", correct: false },
-        { option: "Fish", correct: false },
-      ],
-    },
-    // question strowbery
-    {
-      question: "What is shown in the picture?",
-      image: "../assets/assets-mudah/apple.jpg",
-      answers: [
-        { option: "Apple", correct: true },
-        { option: "Strowbery", correct: false },
-        { option: "Banana", correct: false },
-        { option: "Orange", correct: false },
-      ],
-    },
-    {
-      question: "What is this vehicle called?",
-      image: "../assets/assets-mudah/motorcycle.jpg",
-      answers: [
-        { option: "Car", correct: false },
-        { option: "Bicycle", correct: false },
-        { option: "Motorcycle", correct: true },
-        { option: "Bus", correct: false },
-      ],
-    },
-    {
-      question: "What flies in the sky?",
-      image: "../assets/assets-mudah/plane.jpg",
-      answers: [
-        { option: "Bird", correct: false },
-        { option: "Butterfly", correct: false },
-        { option: "Plane", correct: true },
-        { option: "Kite", correct: false },
-      ],
-    },
-    {
-      question: "What is this traditional Indonesian vehicle?",
-      image: "../assets/assets-mudah/becak.jpg",
-      answers: [
-        { option: "Car", correct: false },
-        { option: "Bicycle", correct: false },
-        { option: "Motorcycle", correct: false },
-        { option: "Becak", correct: true },
-      ],
-    },
-    {
-      question: "What is this person doing?",
-      image: "../assets/assets-mudah/work.svg",
-      answers: [
-        { option: "Eating", correct: false },
-        { option: "Sleeping", correct: false },
-        { option: "Working", correct: true },
-        { option: "Playing", correct: false },
-      ],
-    },
-    {
-      question: "What is this person doing?",
-      image: "../assets/assets-mudah/singing.svg",
-      answers: [
-        { option: "Talking", correct: false },
-        { option: "Reading", correct: false },
-        { option: "Singing", correct: true },
-        { option: "Dancing", correct: false },
-      ],
-    },
   {
-    question: "What is this person doing?",
-    image: "../assets/assets-mudah/driving.svg",
+    question: "What plans were they talking about to do in the park?",
     answers: [
-      { option: "Cooking", correct: false },
-      { option: "Driving", correct: true },
-      { option: "Swimming", correct: false },
-      { option: "Running", correct: false },
+      { option: "Picnic and kite flying", correct: true },
+      { option: "Cycling and swimming", correct: false },
+      { option: "Running and fishing", correct: false },
+      { option: "Playing soccer", correct: false },
     ],
   },
   {
-    question: "What is this person riding?",
-    image: "../assets/assets-mudah/bicycle.svg",
+    question: "What will Lisa bring as snacks for the picnic?",
     answers: [
-      { option: "Motorcycle", correct: false },
-      { option: "Bicycle", correct: true },
-      { option: "Scooter", correct: false },
-      { option: "Skateboard", correct: false },
+      { option: "Ice cream and chocolate", correct: false },
+      { option: "Fruit and sandwiches", correct: true },
+      { option: "Cake and French fries", correct: false },
+      { option: "Pizza and soda", correct: false },
     ],
   },
   {
-    question: "What is this person doing?",
-    image: "../assets/assets-mudah/studying.svg",
+    question: "Where they will meet in the park?",
     answers: [
-      { option: "Playing", correct: false },
-      { option: "Studying", correct: true },
-      { option: "Sleeping", correct: false },
-      { option: "Eating", correct: false },
+      { option: "In front of the supermarket", correct: false },
+      { option: "In the pool", correct: false },
+      { option: "At the park entrance", correct: true },
+      { option: "At the bus stop", correct: false },
     ],
   },
+  {
+    question: "What are Tom's worries about the weather?",
+    answers: [
+      { option: "Chance of rain", correct: true },
+      { option: "The hot sun", correct: false },
+      { option: "Strong winds", correct: false },
+      { option: "Possible thunderstorms", correct: false },
+    ],
+  },
+  {
+    question: "What Tom will take to the park?",
+    answers: [
+      { option: "Hat and sunglasses", correct: false },
+      { option: "Bicycles and skateboards", correct: false },
+      { option: "Kite", correct: true },
+      { option: "Hat and sunglasses", correct: false },
+    ],
+  },
+  // Tambahkan pertanyaan berikut sesuai kebutuhan
 ];
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
 
 function highlightCorrectAnswer() {
   const correctOptionIndex = questions[currentQuestion].answers.findIndex(
@@ -121,6 +74,8 @@ function highlightCorrectAnswer() {
   );
   correctButton.classList.add("correct");
 }
+
+shuffleArray(questions);
 
 function highlightCorrectAnswerNotAnswer() {
   const correctOptionIndex = questions[currentQuestion].answers.findIndex(
@@ -149,10 +104,6 @@ function highlightinCorrectAnswer(isCorrect, selectedOption) {
     );
     selectedButton.classList.add("incorrect");
   }
-
-  //   if (!isCorrect) {
-  //     correctButton.classList.add("incorrect");
-  //   }
 }
 
 function startTimer(duration, display) {
@@ -192,17 +143,21 @@ function loadQuestion() {
   let indexQuestion = document.getElementById("index-question");
   let questionElement = document.getElementById("question");
   let answersElement = document.getElementById("answers");
-  let questionImageElement = document.getElementById("questionImage");
   const timerDisplay = document.getElementById("timer");
+  const audioElement = document.getElementById("backsound"); // Tambahan: Dapatkan elemen audio
 
   const answerLetters = ["A", "B", "C", "D"];
 
   indexQuestion.innerHTML = `Soal ${currentQuestion + 1} / ${questions.length}`;
   questionElement.innerHTML = question.question;
-  questionImageElement.src = question.image;
   answersElement.innerHTML = "";
 
-  startTimer(3, timerDisplay); // set waktu
+  startTimer(30, timerDisplay); // set waktu
+
+  // Shuffle the order of answer options
+  shuffleArray(question.answers);
+
+  questionarea.classList.add("fade-in");
 
   for (let i = 0; i < question.answers.length; i++) {
     answersElement.innerHTML += `
@@ -215,37 +170,37 @@ function loadQuestion() {
         </button>
       `;
   }
+
+  // Tambahan: Mulai pemutaran audio
+  audioElement.play();
 }
 
 function selectAnswer(isCorrect, selectedOption) {
-    clearInterval(timer);
+  clearInterval(timer);
 
-    if (selectedOption === undefined) {
-        console.log(selectedOption);
-        highlightCorrectAnswerNotAnswer();
-        wrongAnswer++;
-      } else if (selectedOption !== undefined && !isCorrect) {
-        console.log(selectedOption);
-        highlightinCorrectAnswer(isCorrect, selectedOption);
-        wrongAnswer++;
-      } else if (selectedOption !== undefined && isCorrect) {
-        console.log(selectedOption);
-        highlightCorrectAnswer();
-        score++;
-      }
+  if (selectedOption === undefined) {
+    highlightCorrectAnswerNotAnswer();
+    wrongAnswer++;
+  } else if (selectedOption !== undefined && !isCorrect) {
+    highlightinCorrectAnswer(isCorrect, selectedOption);
+    wrongAnswer++;
+  } else if (selectedOption !== undefined && isCorrect) {
+    highlightCorrectAnswer();
+    score++;
+  }
 
-    disableButtons();
-  
-    setTimeout(() => {
-      currentQuestion++;
-  
-      if (currentQuestion < questions.length) {
-        loadQuestion();
-      } else {
-        handleUnansweredQuestions();
-        displayResult();
-      }
-    }, 1500);
+  disableButtons();
+
+  setTimeout(() => {
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+      loadQuestion();
+    } else {
+      handleUnansweredQuestions();
+      displayResult();
+    }
+  }, 1500);
 }
 
 function disableButtons() {
@@ -271,28 +226,29 @@ function displayResult() {
 
   btnKembali.textContent = "Kembali ke halaman utama";
   btnKembali.onclick = function () {
-    window.location.href = "../index.html";
+    window.location.href = "../loggedIn/index.html";
   };
 
   if (score >= 8) {
     btnUlangi.textContent = "Lanjut";
     btnUlangi.onclick = function () {
-      window.location.href = "kuis-sedang.html";
+      window.location.href = "kuis-sulit.html";
     };
   } else {
     btnUlangi.textContent = "Ulangi";
     btnUlangi.onclick = function () {
-      window.location.href = "kuis-mudah.html"; // Ganti dengan halaman kuis yang sesuai
+      window.location.href = "kuis-sedang.html";
     };
   }
 
-  conBtnResult.innerHTML = ""; // Clear existing buttons
+  conBtnResult.innerHTML = "";
   conBtnResult.appendChild(btnKembali);
   conBtnResult.appendChild(btnUlangi);
 
   popupResult.style.display = "block";
   questionarea.style.display = "none";
   card2.style.display = "none";
+  card3.style.display = "flex";
 }
 
 function submitQuiz() {
@@ -307,8 +263,64 @@ function handleUnansweredQuestions() {
 
 window.addEventListener("unload", handleUnansweredQuestions);
 
+function showSoundCard() {
+  cardsound.style.display = "flex";
+  // Tambahkan logika atau tindakan lain yang diperlukan untuk menampilkan kartu suara
+}
+
 setTimeout(() => {
-  loadQuestion();
+  // Sembunyikan card-1 setelah 12 detik
   card1.style.display = "none";
-  questionarea.style.animation = "fade-in 4s 1s forwards";
-}, 1000);
+  // Jalankan fungsi showSoundCard
+  showSoundCard();
+}, 10000);
+
+// Tambahkan event listener untuk setiap tombol audio
+const audioButtons = document.querySelectorAll(".btn-audio");
+audioButtons.forEach((button) => {
+  button.addEventListener("click", playAudio);
+});
+
+function playAudio() {
+  // Mendapatkan tombol yang ditekan
+  const button = this;
+
+  // Mematikan event listener untuk tombol tersebut agar tidak dapat diklik lagi
+  button.removeEventListener("click", playAudio);
+  const audioPath = "../assets/audio/conversation.mp3";
+
+  // Buat elemen audio
+  const audioElement = new Audio(audioPath);
+
+  // Tampilkan elemen info
+  const infoElement = document.querySelector(".info");
+  infoElement.style.display = "block";
+
+  // Tampilkan dan mulai countdown timer pada timer-sound
+  const timerSoundDisplay = document.getElementById("timer-sound");
+  timerSoundDisplay.style.display = "block";
+  let countdown = 40;
+
+  // Tambahkan event listener untuk memulai countdown setelah audio dimulai
+  audioElement.onplay = () => {
+    const countdownInterval = setInterval(() => {
+      timerSoundDisplay.textContent = `00:${
+        countdown < 10 ? "0" : ""
+      }${countdown}`;
+      countdown--;
+
+      if (countdown < 0) {
+        clearInterval(countdownInterval);
+        timerSoundDisplay.style.display = "none";
+        const soundCard = document.querySelector(".card-sound");
+        const questionCard = document.querySelector(".card-2");
+        soundCard.style.display = "none";
+        questionCard.style.display = "flex";
+        loadQuestion(); // Muat pertanyaan pertama setelah menampilkan card-2
+      }
+    }, 1000);
+  };
+
+  // Putar audio
+  audioElement.play();
+}

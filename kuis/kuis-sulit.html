@@ -1,93 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kuis Level Mudah | Edukids</title>
-    <link rel="stylesheet" href="kuis-sulit.css" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-  </head>
-  <body class="body-kuis">
-    <div
-      class="btn-close-kuis"
-      onclick="window.location.href = '../index.html';"
-    >
-      <iconify-icon icon="line-md:chevron-small-left"></iconify-icon>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuis Level Mudah | Edukids</title>
+  <link rel="stylesheet" href="kuis-sulit.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+
+<body class="body-kuis">
+  <audio id="backsound" controls autoplay loop>
+    <source src="../assets/audio/Sugar+Cookie+.mp3" type="audio/mpeg" />
+  </audio>
+  <div class="btn-close-kuis" onclick="window.location.href = '../index.html';">
+    <iconify-icon icon="line-md:chevron-small-left"></iconify-icon>
+  </div>
+  <div class="card-1" id="card-1">
+    <div class="introduction" id="alert-text">
+      <p>Total soal di level ini = <span>10</span> Soal</p>
+      <p>Durasi mengerjakan = <span>30detik/soal</span></p>
+      <p>
+        Untuk melewati level kesulitan ini minimal anda menjawab soal dengan
+        benar 8 soal. Kerjakan dengan cermat dan fokus. Good Luck, semangat
+        guys.
+      </p>
+      <p style="color: red">
+        Hindari salah menekan jawaban, karena tidak dapat di ulang!!
+      </p>
     </div>
+  </div>
 
-    <div class="card-1" id="card-1">
-      <div class="introduction" id="alert-text">
-        <p>Total soal di level ini = <span>10</span> Soal</p>
-        <p>Durasi mengerjakan = <span>30detik/soal</span></p>
-        <p>
-          Untuk melewati level kesulitan ini minimal anda menjawab soal dengan
-          benar 8 soal. Kerjakan dengan cermat dan fokus. Good Luck, semangat
-          guys.
-        </p>
-        <p style="color: red">
-          Hindari salah menekan jawaban, karena tidak dapat di ulang!!
-        </p>
+  <div class="card-sound">
+    <div class="sound" id="sound-area">
+      <div class="header-sound">
+        <p class="info">Lanjut ke soal dalam</p>
+        <p class="timer-sound" id="timer-sound">00:41</p>
       </div>
-    </div>
-
-    <div class="card-2" id="card-2">
-      <div class="quiz" id="question-area">
-        <div class="header-kuis">
-          <p class="numberOfQuestions" id="index-question">Kuis 1/10</p>
-          <p class="time" id="timer"></p>
+      <div class="sound-content">
+        <div class="img">
+          <img src="../assets/assets-sulit/img-sound.jpg" alt="" id="soundImage" />
         </div>
-        <div class="question">
-          <div class="img">
-            <img src="" alt="" id="questionImage" />
-          </div>
-          <div class="text-question">
-            <p class="title">Guess the picture</p>
-            <p id="question"></p>
-          </div>
-        </div>
-        <div class="con-btn-answer" id="answers"></div>
-      </div>
-    </div>
-
-    <div class="card-3">
-      <div class="result" id="popup-result">
-        <div class="header-result">Hasil</div>
-        <div class="box">
-          <div class="img">
-            <img src="../assets/result-succes.svg" alt="" />
-          </div>
-          <div class="text-result">
-            <p>
-              Selamat kamu telah menyelesaikan kuis dengan baik, kamu bisa
-              melanjutkan ke level selanjutnya.
-            </p>
-            <div class="jumlah-jawaban">
-              <p>
-                Jawaban Benar : <span class="jumlah-benar" id="score">0</span>
-              </p>
-              <p>
-                Jawaban Salah :
-                <span class="jumlah-salah" id="wrongAnswers">0</span>
-              </p>
+        <div class="text-sound">
+          <p class="sound-title">Dengarkan percakapan berikut</p>
+          <div class="sound-btn">
+            <div class="btn-sound">
+              <img src="../assets/btn_play_sound.svg" alt="" class="btn-audio"
+                data-index="../assets/audio/conversation.mp3" />
+              <h4>Klik untuk memutar</h4>
             </div>
           </div>
         </div>
-        <div class="con-btn-result">
-          <button onclick="window.location.href = '../index.html';">
-            Kembali ke halaman utama
-          </button>
-          <button onclick="window.location.href = 'kuis-sedang.html';">
-            Lanjut
-          </button>
-        </div>
       </div>
     </div>
+  </div>
 
-    <script src="../logic/kuis-sulit.js"></script>
-  </body>
+  <div class="card-2" id="card-2">
+    <div class="quiz" id="question-area">
+      <div class="header-kuis">
+        <p class="numberOfQuestions" id="index-question">Kuis 1/10</p>
+        <p class="time" id="timer"></p>
+      </div>
+      <div class="question">
+        <div class="text-question">
+          <p class="title">Listening quiz</p>
+          <p id="question"></p>
+        </div>
+      </div>
+      <div class="con-btn-answer" id="answers"></div>
+    </div>
+  </div>
+
+  <div class="card-3">
+    <div class="result" id="popup-result">
+      <div class="header-result">Hasil</div>
+      <div class="box">
+        <div class="img">
+          <img src="../assets/result-succes.svg" alt="" />
+        </div>
+        <div class="text-result">
+          <p>
+            Selamat kamu telah menyelesaikan kuis dengan baik, kamu bisa
+            melanjutkan ke level selanjutnya.
+          </p>
+          <div class="jumlah-jawaban">
+            <p>
+              Jawaban Benar : <span class="jumlah-benar" id="score">0</span>
+            </p>
+            <p>
+              Jawaban Salah :
+              <span class="jumlah-salah" id="wrongAnswers">0</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="con-btn-result">
+        <button onclick="window.location.href = '../index.html';">
+          Kembali ke halaman utama
+        </button>
+        <button onclick="window.location.href = 'kuis-sedang.html';">
+          Lanjut
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../logic/kuis-sulit.js"></script>
+</body>
+
 </html>
