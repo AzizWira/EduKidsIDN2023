@@ -326,6 +326,26 @@ h4 {
     line-height: normal;
 }
 
+@media only screen and (max-width: 1100px) {
+    .con-fill li {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .con-fill li {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .con-fill li {
+        font-size: 18px;
+    }
+}
+
+
+
 
 /* end tenses */
 
