@@ -242,9 +242,9 @@ function displayResult() {
     resultTextSuccess.style.display = "block";
     resultTextFailed.style.display = "none";
     buttonSuccess.style.display = "block";
-    btnLanjut.textContent = "Lanjut";
+    btnLanjut.textContent = "Keluar dari kuis";
     btnLanjut.onclick = function () {
-      window.location.href = "kuis-sulit.html";
+      window.location.href = "../loggedIn/kuis.html";
     };
   } else {
     certiImage.src = "../assets/failedToNextLevel.svg";
@@ -259,7 +259,7 @@ function displayResult() {
 
   conBtnResult.innerHTML = "";
   conBtnResult.appendChild(btnKembali);
-  // conBtnResult.appendChild(btnLanjut);
+  conBtnResult.appendChild(btnLanjut);
 
   popupResultSuccess.style.display = "block";
   questionarea.style.display = "none";
