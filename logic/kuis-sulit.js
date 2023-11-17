@@ -8,6 +8,7 @@ const card1 = document.getElementById("card-1");
 const card2 = document.getElementById("card-2");
 const card3 = document.getElementById("card-3");
 const cardsound = document.getElementById("card-sound");
+let audioElement;
 
 let questions = [
   {
@@ -55,7 +56,6 @@ let questions = [
       { option: "Hat and sunglasses", correct: false },
     ],
   },
-  // Tambahkan pertanyaan berikut sesuai kebutuhan
 ];
 
 function shuffleArray(array) {
@@ -213,39 +213,55 @@ function disableButtons() {
 function displayResult() {
   clearInterval(timer);
 
-  const scoreElement = document.getElementById("score");
-  const wrongAnswersElement = document.getElementById("wrongAnswers");
+  const scoreElementSuccess = document.getElementById("score");
+  const wrongAnswersElementSuccess = document.getElementById("wrongAnswers");
+  const scoreElementFailed = document.getElementById("scoreFailed");
+  const wrongAnswersElementFailed = document.getElementById("wrongAnswersFailed");
+  const resultTextSuccess = document.getElementById("text-result-success");
+  const resultTextFailed = document.getElementById("text-result-failed");
+  const certiImage = document.querySelector(".certi img");
+  const buttonSuccess = document.getElementById("buttonSuccess");
 
-  scoreElement.textContent = score;
-  wrongAnswersElement.textContent = wrongAnswer;
+  scoreElementSuccess.textContent = score;
+  wrongAnswersElementSuccess.textContent = wrongAnswer;
+  scoreElementFailed.textContent = score; // Sesuaikan ini dengan ID yang sesuai jika perlu
+  wrongAnswersElementFailed.textContent = wrongAnswer; // Sesuaikan ini dengan ID yang sesuai jika perlu
 
-  const popupResult = document.getElementById("popup-result");
+  const popupResultSuccess = document.getElementById("popup-result-success");
   const conBtnResult = document.querySelector(".con-btn-result");
   const btnKembali = document.createElement("button");
-  const btnUlangi = document.createElement("button");
+  const btnLanjut = document.createElement("button");
 
   btnKembali.textContent = "Kembali ke halaman utama";
   btnKembali.onclick = function () {
     window.location.href = "../loggedIn/index.html";
   };
 
-  if (score >= 8) {
-    btnUlangi.textContent = "Lanjut";
-    btnUlangi.onclick = function () {
+  if (score >= 4) {
+    certiImage.src = "../assets/certi-dumy.jpg";
+    resultTextSuccess.style.display = "block";
+    resultTextFailed.style.display = "none";
+    buttonSuccess.style.display = "block";
+    btnLanjut.textContent = "Lanjut";
+    btnLanjut.onclick = function () {
       window.location.href = "kuis-sulit.html";
     };
   } else {
-    btnUlangi.textContent = "Ulangi";
-    btnUlangi.onclick = function () {
+    certiImage.src = "../assets/failedToNextLevel.svg";
+    resultTextSuccess.style.display = "none";
+    resultTextFailed.style.display = "block";
+    buttonSuccess.style.display = "none";
+    btnLanjut.textContent = "Ulangi";
+    btnLanjut.onclick = function () {
       window.location.href = "kuis-sedang.html";
     };
   }
 
   conBtnResult.innerHTML = "";
   conBtnResult.appendChild(btnKembali);
-  conBtnResult.appendChild(btnUlangi);
+  conBtnResult.appendChild(btnLanjut);
 
-  popupResult.style.display = "block";
+  popupResultSuccess.style.display = "block";
   questionarea.style.display = "none";
   card2.style.display = "none";
   card3.style.display = "flex";
@@ -271,12 +287,13 @@ function showSoundCard() {
 setTimeout(() => {
   // Sembunyikan card-1 setelah 12 detik
   card1.style.display = "none";
+  cardsound.style.display = "flex";
   // Jalankan fungsi showSoundCard
   showSoundCard();
 }, 10000);
 
 // Tambahkan event listener untuk setiap tombol audio
-const audioButtons = document.querySelectorAll(".btn-audio");
+const audioButtons = document.querySelectorAll(".btn-sound");
 audioButtons.forEach((button) => {
   button.addEventListener("click", playAudio);
 });
@@ -293,8 +310,8 @@ function playAudio() {
   const audioElement = new Audio(audioPath);
 
   // Tampilkan elemen info
-  const infoElement = document.querySelector(".info");
-  infoElement.style.display = "block";
+  const headerSound = document.querySelector(".header-sound");
+  headerSound.style.display = "flex";
 
   // Tampilkan dan mulai countdown timer pada timer-sound
   const timerSoundDisplay = document.getElementById("timer-sound");
