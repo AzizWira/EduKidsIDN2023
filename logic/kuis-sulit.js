@@ -299,7 +299,7 @@ function playAudio() {
   // Tampilkan dan mulai countdown timer pada timer-sound
   const timerSoundDisplay = document.getElementById("timer-sound");
   timerSoundDisplay.style.display = "block";
-  let countdown = 1;
+  let countdown = 40;
 
   // Tambahkan event listener untuk memulai countdown setelah audio dimulai
   audioElement.onplay = () => {
