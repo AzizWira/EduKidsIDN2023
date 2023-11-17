@@ -10,107 +10,114 @@ const card3 = document.getElementById("card-3");
 
 let questions = [
     {
-      question: "What is shown in the picture?",
-      image: "../assets/assets-mudah/cat.jpg",
+      question: 'What is a "bicycle"?',
+      image: "../assets/assets-sedang/bicycle.jpg",
       answers: [
-        { option: "Cat", correct: true },
-        { option: "Dog", correct: false },
-        { option: "Bird", correct: false },
-        { option: "Fish", correct: false },
+        { option: "A farming tool used for weeding crops", correct: false },
+        { option: "A vehicle with two wheels", correct: true },
+        { option: "The name of a fictional character in a science fiction movie", correct: false },
+        { option: "A type of kitchen knife used for cutting meat", correct: false },
       ],
     },
     // question strowbery
     {
-      question: "What is shown in the picture?",
-      image: "../assets/assets-mudah/apple.jpg",
+      question: "What is a boat?",
+      image: "../assets/assets-sedang/boat.png",
       answers: [
-        { option: "Apple", correct: true },
-        { option: "Strowbery", correct: false },
-        { option: "Banana", correct: false },
-        { option: "Orange", correct: false },
+        { option: "a sea transportation", correct: true },
+        { option: "A farming tool used for weeding crops", correct: false },
+        { option: "The name of a fictional character in a science fiction movie", correct: false },
+        { option: "A type of kitchen knife used for cutting meat", correct: false },
       ],
     },
     {
-      question: "What is this vehicle called?",
-      image: "../assets/assets-mudah/motorcycle.jpg",
+      question: "What is a elephant?",
+      image: "../assets/assets-sedang/elephant.png",
       answers: [
-        { option: "Car", correct: false },
-        { option: "Bicycle", correct: false },
-        { option: "Motorcycle", correct: true },
-        { option: "Bus", correct: false },
+        { option: "the underwater reptile", correct: false },
+        { option: "the flying mammal", correct: false },
+        { option: "the small insect", correct: false },
+        { option: "the big animal", correct: true },
       ],
     },
     {
-      question: "What flies in the sky?",
-      image: "../assets/assets-mudah/plane.jpg",
+      question: "Look at that train, the train has a ___ color?",
+      image: "../assets/assets-sedang/train.png",
       answers: [
-        { option: "Bird", correct: false },
-        { option: "Butterfly", correct: false },
-        { option: "Plane", correct: true },
-        { option: "Kite", correct: false },
+        { option: "Yellow", correct: true },
+        { option: "Green", correct: false },
+        { option: "Blue", correct: false },
+        { option: "Red", correct: false },
       ],
     },
     {
-      question: "What is this traditional Indonesian vehicle?",
-      image: "../assets/assets-mudah/becak.jpg",
+      question: "look at that bus, it has ___ wheels?",
+      image: "../assets/assets-sedang/bus.png",
       answers: [
-        { option: "Car", correct: false },
-        { option: "Bicycle", correct: false },
-        { option: "Motorcycle", correct: false },
-        { option: "Becak", correct: true },
+        { option: "Two", correct: false },
+        { option: "Six", correct: false },
+        { option: "Eight", correct: false },
+        { option: "Four", correct: true },
       ],
     },
     {
-      question: "What is this person doing?",
-      image: "../assets/assets-mudah/work.svg",
+      question: "I want to be a ____________ when I grow up.",
+      image: "../assets/assets-sedang/doctor.png",
       answers: [
-        { option: "Eating", correct: false },
-        { option: "Sleeping", correct: false },
-        { option: "Working", correct: true },
-        { option: "Playing", correct: false },
+        { option: "chef", correct: false },
+        { option: "astronaut", correct: false },
+        { option: "doctor", correct: true },
+        { option: "professional skateboarder", correct: false },
       ],
     },
     {
-      question: "What is this person doing?",
-      image: "../assets/assets-mudah/singing.svg",
+      question: "The sun is shining brightly in the ____________.",
+      image: "../assets/assets-sedang/sky.png",
       answers: [
-        { option: "Talking", correct: false },
-        { option: "Reading", correct: false },
-        { option: "Singing", correct: true },
-        { option: "Dancing", correct: false },
+        { option: "shoe", correct: false },
+        { option: "sky", correct: true },
+        { option: "bathtub", correct: false },
+        { option: "backpack", correct: false },
       ],
     },
   {
-    question: "What is this person doing?",
-    image: "../assets/assets-mudah/driving.svg",
+    question: "She loves to play the ____________ every day.",
+    image: "../assets/assets-sedang/piano.png",
     answers: [
-      { option: "Cooking", correct: false },
-      { option: "Driving", correct: true },
-      { option: "Swimming", correct: false },
-      { option: "Running", correct: false },
+      { option: "piano", correct: true },
+      { option: "soccer", correct: false },
+      { option: "guitar", correct: false },
+      { option: "basketball", correct: false },
     ],
   },
   {
-    question: "What is this person riding?",
-    image: "../assets/assets-mudah/bicycle.svg",
+    question: "My favorite ____________ is chocolate.",
+    image: "../assets/assets-sedang/flavor.png",
     answers: [
-      { option: "Motorcycle", correct: false },
-      { option: "Bicycle", correct: true },
-      { option: "Scooter", correct: false },
-      { option: "Skateboard", correct: false },
+      { option: "animal", correct: false },
+      { option: "flavor", correct: true },
+      { option: "color ", correct: false },
+      { option: "hobby", correct: false },
     ],
   },
   {
-    question: "What is this person doing?",
-    image: "../assets/assets-mudah/studying.svg",
+    question: "We are going to the ____________ to buy some fruits.",
+    image: "../assets/assets-sedang/market.png",
     answers: [
-      { option: "Playing", correct: false },
-      { option: "Studying", correct: true },
-      { option: "Sleeping", correct: false },
-      { option: "Eating", correct: false },
+      { option: "library", correct: false },
+      { option: "market", correct: true },
+      { option: "garden", correct: false },
+      { option: "school", correct: false },
     ],
   },
 ];
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
 
 function highlightCorrectAnswer() {
   const correctOptionIndex = questions[currentQuestion].answers.findIndex(
@@ -121,6 +128,8 @@ function highlightCorrectAnswer() {
   );
   correctButton.classList.add("correct");
 }
+
+shuffleArray(questions);
 
 function highlightCorrectAnswerNotAnswer() {
   const correctOptionIndex = questions[currentQuestion].answers.findIndex(
@@ -149,10 +158,6 @@ function highlightinCorrectAnswer(isCorrect, selectedOption) {
     );
     selectedButton.classList.add("incorrect");
   }
-
-  //   if (!isCorrect) {
-  //     correctButton.classList.add("incorrect");
-  //   }
 }
 
 function startTimer(duration, display) {
@@ -196,13 +201,18 @@ function loadQuestion() {
   const timerDisplay = document.getElementById("timer");
 
   const answerLetters = ["A", "B", "C", "D"];
-
+  
   indexQuestion.innerHTML = `Soal ${currentQuestion + 1} / ${questions.length}`;
   questionElement.innerHTML = question.question;
   questionImageElement.src = question.image;
   answersElement.innerHTML = "";
 
-  startTimer(3, timerDisplay); // set waktu
+  startTimer(2, timerDisplay); // set waktu
+
+  // Shuffle the order of answer options
+  shuffleArray(question.answers);
+
+  questionarea.classList.add("fade-in");
 
   for (let i = 0; i < question.answers.length; i++) {
     answersElement.innerHTML += `
@@ -218,34 +228,31 @@ function loadQuestion() {
 }
 
 function selectAnswer(isCorrect, selectedOption) {
-    clearInterval(timer);
+  clearInterval(timer);
 
-    if (selectedOption === undefined) {
-        console.log(selectedOption);
-        highlightCorrectAnswerNotAnswer();
-        wrongAnswer++;
-      } else if (selectedOption !== undefined && !isCorrect) {
-        console.log(selectedOption);
-        highlightinCorrectAnswer(isCorrect, selectedOption);
-        wrongAnswer++;
-      } else if (selectedOption !== undefined && isCorrect) {
-        console.log(selectedOption);
-        highlightCorrectAnswer();
-        score++;
-      }
+  if (selectedOption === undefined) {
+    highlightCorrectAnswerNotAnswer();
+    wrongAnswer++;
+  } else if (selectedOption !== undefined && !isCorrect) {
+    highlightinCorrectAnswer(isCorrect, selectedOption);
+    wrongAnswer++;
+  } else if (selectedOption !== undefined && isCorrect) {
+    highlightCorrectAnswer();
+    score++;
+  }
 
-    disableButtons();
-  
-    setTimeout(() => {
-      currentQuestion++;
-  
-      if (currentQuestion < questions.length) {
-        loadQuestion();
-      } else {
-        handleUnansweredQuestions();
-        displayResult();
-      }
-    }, 1500);
+  disableButtons();
+
+  setTimeout(() => {
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+      loadQuestion();
+    } else {
+      handleUnansweredQuestions();
+      displayResult();
+    }
+  }, 2000);
 }
 
 function disableButtons() {
@@ -271,28 +278,29 @@ function displayResult() {
 
   btnKembali.textContent = "Kembali ke halaman utama";
   btnKembali.onclick = function () {
-    window.location.href = "../index.html";
+    window.location.href = "../loggedIn/index.html";
   };
 
   if (score >= 8) {
     btnUlangi.textContent = "Lanjut";
     btnUlangi.onclick = function () {
-      window.location.href = "kuis-sedang.html";
+      window.location.href = "kuis-sulit.html";
     };
   } else {
     btnUlangi.textContent = "Ulangi";
     btnUlangi.onclick = function () {
-      window.location.href = "kuis-mudah.html"; // Ganti dengan halaman kuis yang sesuai
+      window.location.href = "kuis-sedang.html";
     };
   }
 
-  conBtnResult.innerHTML = ""; // Clear existing buttons
+  conBtnResult.innerHTML = "";
   conBtnResult.appendChild(btnKembali);
   conBtnResult.appendChild(btnUlangi);
 
   popupResult.style.display = "block";
   questionarea.style.display = "none";
   card2.style.display = "none";
+  card3.style.display = "flex";
 }
 
 function submitQuiz() {
@@ -310,5 +318,5 @@ window.addEventListener("unload", handleUnansweredQuestions);
 setTimeout(() => {
   loadQuestion();
   card1.style.display = "none";
-  questionarea.style.animation = "fade-in 4s 1s forwards";
+  card2.style.display = "flex";
 }, 1000);

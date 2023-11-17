@@ -13,9 +13,13 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   </head>
   <body class="body-kuis">
+    <audio controls autoplay loop>
+      <source src="../assets/audio/Sugar+Cookie+.mp3" type="audio/mpeg" />
+    </audio>
+
     <div
       class="btn-close-kuis"
-      onclick="window.location.href = '../index.html';"
+      onclick="window.location.href = '../loggedIn/index.html';"
     >
       <iconify-icon icon="line-md:chevron-small-left"></iconify-icon>
     </div>
@@ -54,7 +58,7 @@
       </div>
     </div>
 
-    <div class="card-3">
+    <div class="card-3" id="card-3">
       <div class="result" id="popup-result">
         <div class="header-result">Hasil</div>
         <div class="box">

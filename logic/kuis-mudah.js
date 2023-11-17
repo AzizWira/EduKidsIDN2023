@@ -112,6 +112,13 @@ let questions = [
   },
 ];
 
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
 function highlightCorrectAnswer() {
   const correctOptionIndex = questions[currentQuestion].answers.findIndex(
     (answer) => answer.correct === true
@@ -121,6 +128,8 @@ function highlightCorrectAnswer() {
   );
   correctButton.classList.add("correct");
 }
+
+shuffleArray(questions);
 
 function highlightCorrectAnswerNotAnswer() {
   const correctOptionIndex = questions[currentQuestion].answers.findIndex(
@@ -149,10 +158,6 @@ function highlightinCorrectAnswer(isCorrect, selectedOption) {
     );
     selectedButton.classList.add("incorrect");
   }
-
-  //   if (!isCorrect) {
-  //     correctButton.classList.add("incorrect");
-  //   }
 }
 
 function startTimer(duration, display) {
@@ -196,13 +201,18 @@ function loadQuestion() {
   const timerDisplay = document.getElementById("timer");
 
   const answerLetters = ["A", "B", "C", "D"];
-
+  
   indexQuestion.innerHTML = `Soal ${currentQuestion + 1} / ${questions.length}`;
   questionElement.innerHTML = question.question;
   questionImageElement.src = question.image;
   answersElement.innerHTML = "";
 
-  startTimer(3, timerDisplay); // set waktu
+  startTimer(2, timerDisplay); // set waktu
+
+  // Shuffle the order of answer options
+  shuffleArray(question.answers);
+
+  questionarea.classList.add("fade-in");
 
   for (let i = 0; i < question.answers.length; i++) {
     answersElement.innerHTML += `
@@ -218,34 +228,31 @@ function loadQuestion() {
 }
 
 function selectAnswer(isCorrect, selectedOption) {
-    clearInterval(timer);
+  clearInterval(timer);
 
-    if (selectedOption === undefined) {
-        console.log(selectedOption);
-        highlightCorrectAnswerNotAnswer();
-        wrongAnswer++;
-      } else if (selectedOption !== undefined && !isCorrect) {
-        console.log(selectedOption);
-        highlightinCorrectAnswer(isCorrect, selectedOption);
-        wrongAnswer++;
-      } else if (selectedOption !== undefined && isCorrect) {
-        console.log(selectedOption);
-        highlightCorrectAnswer();
-        score++;
-      }
+  if (selectedOption === undefined) {
+    highlightCorrectAnswerNotAnswer();
+    wrongAnswer++;
+  } else if (selectedOption !== undefined && !isCorrect) {
+    highlightinCorrectAnswer(isCorrect, selectedOption);
+    wrongAnswer++;
+  } else if (selectedOption !== undefined && isCorrect) {
+    highlightCorrectAnswer();
+    score++;
+  }
 
-    disableButtons();
-  
-    setTimeout(() => {
-      currentQuestion++;
-  
-      if (currentQuestion < questions.length) {
-        loadQuestion();
-      } else {
-        handleUnansweredQuestions();
-        displayResult();
-      }
-    }, 1500);
+  disableButtons();
+
+  setTimeout(() => {
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+      loadQuestion();
+    } else {
+      handleUnansweredQuestions();
+      displayResult();
+    }
+  }, 2000);
 }
 
 function disableButtons() {
@@ -271,7 +278,7 @@ function displayResult() {
 
   btnKembali.textContent = "Kembali ke halaman utama";
   btnKembali.onclick = function () {
-    window.location.href = "../index.html";
+    window.location.href = "../loggedIn/index.html";
   };
 
   if (score >= 8) {
@@ -282,17 +289,18 @@ function displayResult() {
   } else {
     btnUlangi.textContent = "Ulangi";
     btnUlangi.onclick = function () {
-      window.location.href = "kuis-mudah.html"; // Ganti dengan halaman kuis yang sesuai
+      window.location.href = "kuis-mudah.html";
     };
   }
 
-  conBtnResult.innerHTML = ""; // Clear existing buttons
+  conBtnResult.innerHTML = "";
   conBtnResult.appendChild(btnKembali);
   conBtnResult.appendChild(btnUlangi);
 
   popupResult.style.display = "block";
   questionarea.style.display = "none";
   card2.style.display = "none";
+  card3.style.display = "flex";
 }
 
 function submitQuiz() {
@@ -310,5 +318,5 @@ window.addEventListener("unload", handleUnansweredQuestions);
 setTimeout(() => {
   loadQuestion();
   card1.style.display = "none";
-  questionarea.style.animation = "fade-in 4s 1s forwards";
+  card2.style.display = "flex";
 }, 1000);
