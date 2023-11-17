@@ -82,6 +82,10 @@
     gap: 24px;
 }
 
+.con-certificate .img{
+    max-width: 230px;
+}
+
 .con-certificate .img img{
     width: 100%;
     height: auto;

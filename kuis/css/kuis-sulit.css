@@ -438,20 +438,20 @@ audio {
 
 .con-btn-result {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 10px;
     margin-top: 20px;
 }
 
 .con-btn-result button {
     border-radius: 20px;
-    border: 1px solid #C4C4C4;
+    border: 1px solid #E89C24;
     background: #FFF;
     padding: 10px;
     cursor: pointer;
     transition: all 0.15s ease-in-out;
     text-align: center;
-    color: #4B4B4B;
+    color: #E89C24;
     font-size: 20px;
 }
 

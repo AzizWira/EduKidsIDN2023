@@ -253,13 +253,13 @@ function displayResult() {
     buttonSuccess.style.display = "none";
     btnLanjut.textContent = "Ulangi";
     btnLanjut.onclick = function () {
-      window.location.href = "kuis-sedang.html";
+      window.location.href = "kuis-sulit.html";
     };
   }
 
   conBtnResult.innerHTML = "";
   conBtnResult.appendChild(btnKembali);
-  conBtnResult.appendChild(btnLanjut);
+  // conBtnResult.appendChild(btnLanjut);
 
   popupResultSuccess.style.display = "block";
   questionarea.style.display = "none";

@@ -301,7 +301,7 @@ function displayResult() {
   };
 
   if (score >= 8) {
-    certiImage.src = "../assets/certi-dumy.jpg";
+    certiImage.src = "../assets/serti-sedang.png";
     resultTextSuccess.style.display = "block";
     resultTextFailed.style.display = "none";
     buttonSuccess.style.display = "block";
