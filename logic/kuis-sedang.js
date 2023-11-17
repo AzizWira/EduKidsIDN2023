@@ -19,7 +19,6 @@ let questions = [
         { option: "A type of kitchen knife used for cutting meat", correct: false },
       ],
     },
-    // question strowbery
     {
       question: "What is a boat?",
       image: "../assets/assets-sedang/boat.png",
@@ -207,7 +206,7 @@ function loadQuestion() {
   questionImageElement.src = question.image;
   answersElement.innerHTML = "";
 
-  startTimer(2, timerDisplay); // set waktu
+  startTimer(30, timerDisplay); // set waktu
 
   // Shuffle the order of answer options
   shuffleArray(question.answers);
@@ -252,7 +251,7 @@ function selectAnswer(isCorrect, selectedOption) {
       handleUnansweredQuestions();
       displayResult();
     }
-  }, 2000);
+  }, 1500);
 }
 
 function disableButtons() {
@@ -319,4 +318,4 @@ setTimeout(() => {
   loadQuestion();
   card1.style.display = "none";
   card2.style.display = "flex";
-}, 1000);
+}, 15000);

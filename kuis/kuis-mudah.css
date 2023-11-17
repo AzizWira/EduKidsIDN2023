@@ -19,20 +19,40 @@ audio {
 
 
 .btn-close-kuis {
-    position: fixed;
+    position: sticky;
     top: 50px;
     left: 50px;
     border-radius: 10px;
     background: #FFF;
     box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
     padding: 10px;
-    font-size: 30px;
     display: flex;
     cursor: pointer;
     transition: all 0.3s;
     z-index: 5;
     color: #797979;
     font-size: 30px;
+    width: max-content;
+}
+
+@media only screen and (max-width: 768px) {
+    .btn-close-kuis {
+        position: sticky;
+        top: 20px;
+        left: 20px;
+        border-radius: 10px;
+        background: #FFF;
+        box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+        padding: 10px;
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .btn-close-kuis {
+        top: 10px;
+        left: 10px;
+    }
 }
 
 .btn-close-kuis:hover {
@@ -41,7 +61,7 @@ audio {
 
 
 .card-1 {
-    height: 100vh;
+    height: 90vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -49,7 +69,7 @@ audio {
 }
 
 .card-2 {
-    height: 100vh;
+    height: 90vh;
     width: 100%;
     display: none;
     justify-content: center;
@@ -57,7 +77,7 @@ audio {
 }
 
 .card-3 {
-    height: 100vh;
+    height: 90vh;
     width: 100%;
     display: none;
     justify-content: center;
@@ -101,11 +121,11 @@ audio {
 }
 
 #alert-text {
-    animation: fade-in-fade-out 1000ms forwards;
+    animation: fade-in-fade-out 15000ms forwards;
 }
 
 #popup-result {
-    display: none;
+    display: block;
 }
 
 .introduction {
@@ -138,6 +158,8 @@ audio {
     line-height: normal;
 }
 
+
+
 .introduction p {
     text-align: center;
     color: #797979;
@@ -148,6 +170,8 @@ audio {
     font-weight: 400;
     line-height: normal;
 }
+
+
 
 .question {
     display: flex;
@@ -169,8 +193,8 @@ audio {
 
 .con-btn-answer button {
     width: 100%;
-    border-radius: 20px;
-    border: 1px solid #C4C4C4;
+    border-radius: 10px;
+    border: 1px solid #E89C24;
     background: #FFF;
     padding: 10px;
     cursor: pointer;
@@ -178,7 +202,7 @@ audio {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #4B4B4B;
+    color: #E89C24;
 }
 
 .con-btn-answer button:hover, .con-btn-answer button.active {
@@ -187,9 +211,14 @@ audio {
 }
 
 .con-btn-answer button span:nth-child(1) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: #E89C24;
     border-radius: 5px;
     padding: 5px;
+    width: 25px;
+    height: 25px;
     color: #FFF;
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
@@ -211,7 +240,7 @@ audio {
 }
 
 .question .img {
-    width: 40%;
+    width: 30%;
 }
 
 .question .img img {
@@ -242,6 +271,91 @@ audio {
     font-weight: 400;
     line-height: normal;
     color: #303030;
+}
+
+@media only screen and (max-width: 1050px) {
+    .card-2 .quiz .header-kuis p {
+        font-size: 20px;
+    }
+
+    .question {
+        margin-top: 5px;
+    }
+
+    .question .text-question .title {
+        font-size: 24px;
+        line-height: 25px;
+        margin-bottom: 5px;
+    }
+
+    .question .text-question p {
+        font-size: 20px;
+        line-height: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .introduction {
+        max-width: 80%;
+    }
+
+    .quiz {
+        max-width: 80%;
+    }
+
+    .introduction p {
+        font-size: 18px;
+    }
+
+    .con-btn-answer {
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .con-btn-answer button span:nth-child(1) {
+        font-size: 18px;
+        width: 25px;
+    }
+
+    .con-btn-answer button span:nth-child(2) {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .question {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .question .text-question {
+        width: 100%;
+    }
+
+    .question .img {
+        width: 100%;
+    }
+
+    .con-btn-answer {
+        gap: 10px;
+        margin-top: 10px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .card-2, .card-3 {
+        height: 100%;
+        margin: 30px 0 40px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .card-1{
+        height: 100%;
+        margin: 30px 0 40px;
+    }
+
 }
 
 /*  */
@@ -275,6 +389,7 @@ audio {
 
 .card-3 .result .box .img {
     width: 30%;
+    max-width: 180px;
 }
 
 .card-3 .result .box .img img {
@@ -316,19 +431,72 @@ audio {
 
 .con-btn-result button {
     border-radius: 20px;
-    border: 1px solid #C4C4C4;
+    border: 1px solid #E89C24;
     background: #FFF;
     padding: 10px;
     cursor: pointer;
     transition: all 0.15s ease-in-out;
     text-align: center;
-    color: #4B4B4B;
+    color: #E89C24;
     font-size: 20px;
 }
 
 .con-btn-result button:hover {
     background: #E89C24;
     color: #FFF;
+}
+
+@media only screen and (max-width: 1050px) {
+    .card-3 .result .header-result {
+        font-size: 20px;
+    }
+
+    .card-3 .result .box .text-result p {
+        font-size: 20px;
+    }
+
+    .con-btn-result button {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .card-3 .result {
+        max-width: 80%;
+    }
+
+    .card-3 .result .header-result {
+        font-size: 18px;
+    }
+
+    .card-3 .result .box .text-result p {
+        font-size: 18px;
+    }
+
+    .con-btn-result button {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .card-3 .result .box {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card-3 .result .box .text-result {
+        width: 100%;
+    }
+
+    .card-3 .result .box .img {
+        width: 100%;
+    }
+
+    .con-btn-result {
+        gap: 10px;
+        margin-top: 10px;
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 /*  */

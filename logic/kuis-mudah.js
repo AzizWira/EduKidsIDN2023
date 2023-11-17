@@ -19,7 +19,6 @@ let questions = [
         { option: "Fish", correct: false },
       ],
     },
-    // question strowbery
     {
       question: "What is shown in the picture?",
       image: "../assets/assets-mudah/apple.jpg",
@@ -207,7 +206,7 @@ function loadQuestion() {
   questionImageElement.src = question.image;
   answersElement.innerHTML = "";
 
-  startTimer(2, timerDisplay); // set waktu
+  startTimer(30, timerDisplay); // set waktu
 
   // Shuffle the order of answer options
   shuffleArray(question.answers);
@@ -252,7 +251,7 @@ function selectAnswer(isCorrect, selectedOption) {
       handleUnansweredQuestions();
       displayResult();
     }
-  }, 2000);
+  }, 1500);
 }
 
 function disableButtons() {
@@ -267,6 +266,8 @@ function displayResult() {
 
   const scoreElement = document.getElementById("score");
   const wrongAnswersElement = document.getElementById("wrongAnswers");
+  const resultImageElement = document.getElementById("resultImage");
+  const resultTextElement = document.querySelector(".text-result p");
 
   scoreElement.textContent = score;
   wrongAnswersElement.textContent = wrongAnswer;
@@ -274,7 +275,7 @@ function displayResult() {
   const popupResult = document.getElementById("popup-result");
   const conBtnResult = document.querySelector(".con-btn-result");
   const btnKembali = document.createElement("button");
-  const btnUlangi = document.createElement("button");
+  const btnLanjut = document.createElement("button");
 
   btnKembali.textContent = "Kembali ke halaman utama";
   btnKembali.onclick = function () {
@@ -282,26 +283,34 @@ function displayResult() {
   };
 
   if (score >= 8) {
-    btnUlangi.textContent = "Lanjut";
-    btnUlangi.onclick = function () {
+    resultImageElement.src = "../assets/result-succes.svg";
+    resultTextElement.textContent =
+      "Selamat kamu telah menyelesaikan kuis dengan baik, kamu bisa melanjutkan ke level selanjutnya.";
+    btnLanjut.textContent = "Lanjut";
+    btnLanjut.onclick = function () {
       window.location.href = "kuis-sedang.html";
     };
   } else {
-    btnUlangi.textContent = "Ulangi";
-    btnUlangi.onclick = function () {
+    resultImageElement.src = "../assets/failedToNextLevel.svg";
+    resultTextElement.textContent =
+      "Maaf hasil jawaban anda kurang dari nilai minimal untuk lulus kuis, kamu bisa mengulangi mengerjakan kuis.";
+    btnLanjut.textContent = "Ulangi";
+    btnLanjut.onclick = function () {
       window.location.href = "kuis-mudah.html";
     };
   }
 
   conBtnResult.innerHTML = "";
   conBtnResult.appendChild(btnKembali);
-  conBtnResult.appendChild(btnUlangi);
+  conBtnResult.appendChild(btnLanjut);
 
   popupResult.style.display = "block";
   questionarea.style.display = "none";
   card2.style.display = "none";
   card3.style.display = "flex";
 }
+
+
 
 function submitQuiz() {
   displayResult();
@@ -319,4 +328,4 @@ setTimeout(() => {
   loadQuestion();
   card1.style.display = "none";
   card2.style.display = "flex";
-}, 1000);
+}, 15000);
