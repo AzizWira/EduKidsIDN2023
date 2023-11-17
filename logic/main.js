@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     konfirmasiInput.type = isPasswordType ? "text" : "password";
 
     // Ganti gambar mata sesuai dengan status sebelumnya
-    toggleKonfirmasiButton.innerHTML = `<img src="../assets/${
+    toggleKonfirmasiButton.innerHTML = `<img src="assets/${
       isPasswordType ? "eye" : "eye-slash"
     }-icon.svg" alt="">`;
   });

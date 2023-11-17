@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kuis Level Mudah | Edukids</title>
-    <link rel="stylesheet" href="kuis-sedang.css" />
+    <link rel="stylesheet" href="css/kuis-sedang.css" />
 
     <link
       rel="stylesheet"
@@ -19,7 +19,7 @@
 
     <div
       class="btn-close-kuis"
-      onclick="window.location.href = '../loggedIn/index.html';"
+      onclick="window.location.href = '../loggedIn/kuis.html';"
     >
       <iconify-icon icon="line-md:chevron-small-left"></iconify-icon>
     </div>
@@ -27,7 +27,7 @@
     <div class="card-1" id="card-1">
       <div class="introduction" id="alert-text">
         <p>Total soal di level ini = <span>10</span> Soal</p>
-        <p>Durasi mengerjakan = <span>30detik/soal</span></p>
+        <p>Durasi mengerjakan = <span>30 detik/soal</span></p>
         <p>
           Untuk melewati level kesulitan ini minimal anda menjawab soal dengan
           benar 8 soal. Kerjakan dengan cermat dan fokus. Good Luck, semangat
@@ -59,27 +59,42 @@
     </div>
 
     <div class="card-3" id="card-3">
-      <div class="result" id="popup-result">
+      <div class="result" id="popup-result-success">
         <div class="header-result">Hasil</div>
         <div class="box">
-          <div class="img">
-            <img src="../assets/result-succes.svg" alt="" />
-          </div>
-          <div class="text-result">
-            <p>
-              Selamat kamu telah menyelesaikan kuis dengan baik, kamu bisa
-              melanjutkan ke level selanjutnya.
-            </p>
-            <div class="jumlah-jawaban">
+          <div class="certi">
+            <div class="img">
+              <img src="../assets/certi-dumy.jpg" alt="" />
+            </div>
+            <div class="text-result" id="text-result-success">
               <p>
-                Jawaban Benar : <span class="jumlah-benar" id="score">0</span>
-              </p>
-              <p>
-                Jawaban Salah :
+                Selamat kamu telah menyelesaikan kuis dengan level kesulitan
+                sedang, kamu menjawab soal benar
+                <span class="jumlah-benar" id="score">0</span> dan soal salah
                 <span class="jumlah-salah" id="wrongAnswers">0</span>
+                soal. Kamu mendapatkan sertifikat, silahkan unduh sertifikat
+                yang tersedia di samping ini.
               </p>
             </div>
+            <div class="text-result" id="text-result-failed">
+              <p id="resultTextFailed">
+                Maaf hasil jawaban anda kurang dari nilai minimal untuk lulus
+                kuis, kamu bisa mengulangi mengerjakan kuis.
+              </p>
+              <div class="jumlah-jawaban">
+                <p>
+                  Jawaban Benar : <span class="jumlah-benar" id="scoreFailed">0</span>
+                </p>
+                <p>
+                  Jawaban Salah :
+                  <span class="jumlah-salah" id="wrongAnswersFailed">0</span>
+                </p>
+              </div>
+            </div>
           </div>
+          <button id="buttonSuccess" onclick="
+            window.location.href = 'https://drive.google.com/file/d/1TibtUB5L9eqqo-anfdkNVb5cC4JVrvMU/view?usp=sharing'
+          ">Unduh Sertifikat</button>
         </div>
         <div class="con-btn-result">
           <button onclick="window.location.href = '../index.html';">

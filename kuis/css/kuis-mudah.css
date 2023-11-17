@@ -7,7 +7,7 @@
 }
 
 .body-kuis {
-    background: url(../assets/background-kuis.jpg);
+    background: url(../../assets/background-kuis.jpg);
     /* background-size: cover; 
     background-position: center; */
     /* overflow: hidden; */
@@ -121,7 +121,7 @@ audio {
 }
 
 #alert-text {
-    animation: fade-in-fade-out 15000ms forwards;
+    animation: fade-in-fade-out 15s forwards;
 }
 
 #popup-result {

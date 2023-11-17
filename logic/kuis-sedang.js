@@ -9,76 +9,88 @@ const card2 = document.getElementById("card-2");
 const card3 = document.getElementById("card-3");
 
 let questions = [
-    {
-      question: 'What is a "bicycle"?',
-      image: "../assets/assets-sedang/bicycle.jpg",
-      answers: [
-        { option: "A farming tool used for weeding crops", correct: false },
-        { option: "A vehicle with two wheels", correct: true },
-        { option: "The name of a fictional character in a science fiction movie", correct: false },
-        { option: "A type of kitchen knife used for cutting meat", correct: false },
-      ],
-    },
-    {
-      question: "What is a boat?",
-      image: "../assets/assets-sedang/boat.png",
-      answers: [
-        { option: "a sea transportation", correct: true },
-        { option: "A farming tool used for weeding crops", correct: false },
-        { option: "The name of a fictional character in a science fiction movie", correct: false },
-        { option: "A type of kitchen knife used for cutting meat", correct: false },
-      ],
-    },
-    {
-      question: "What is a elephant?",
-      image: "../assets/assets-sedang/elephant.png",
-      answers: [
-        { option: "the underwater reptile", correct: false },
-        { option: "the flying mammal", correct: false },
-        { option: "the small insect", correct: false },
-        { option: "the big animal", correct: true },
-      ],
-    },
-    {
-      question: "Look at that train, the train has a ___ color?",
-      image: "../assets/assets-sedang/train.png",
-      answers: [
-        { option: "Yellow", correct: true },
-        { option: "Green", correct: false },
-        { option: "Blue", correct: false },
-        { option: "Red", correct: false },
-      ],
-    },
-    {
-      question: "look at that bus, it has ___ wheels?",
-      image: "../assets/assets-sedang/bus.png",
-      answers: [
-        { option: "Two", correct: false },
-        { option: "Six", correct: false },
-        { option: "Eight", correct: false },
-        { option: "Four", correct: true },
-      ],
-    },
-    {
-      question: "I want to be a ____________ when I grow up.",
-      image: "../assets/assets-sedang/doctor.png",
-      answers: [
-        { option: "chef", correct: false },
-        { option: "astronaut", correct: false },
-        { option: "doctor", correct: true },
-        { option: "professional skateboarder", correct: false },
-      ],
-    },
-    {
-      question: "The sun is shining brightly in the ____________.",
-      image: "../assets/assets-sedang/sky.png",
-      answers: [
-        { option: "shoe", correct: false },
-        { option: "sky", correct: true },
-        { option: "bathtub", correct: false },
-        { option: "backpack", correct: false },
-      ],
-    },
+  {
+    question: 'What is a "bicycle"?',
+    image: "../assets/assets-sedang/bicycle.jpg",
+    answers: [
+      { option: "A farming tool used for weeding crops", correct: false },
+      { option: "A vehicle with two wheels", correct: true },
+      {
+        option: "The name of a fictional character in a science fiction movie",
+        correct: false,
+      },
+      {
+        option: "A type of kitchen knife used for cutting meat",
+        correct: false,
+      },
+    ],
+  },
+  {
+    question: "What is a boat?",
+    image: "../assets/assets-sedang/boat.png",
+    answers: [
+      { option: "a sea transportation", correct: true },
+      { option: "A farming tool used for weeding crops", correct: false },
+      {
+        option: "The name of a fictional character in a science fiction movie",
+        correct: false,
+      },
+      {
+        option: "A type of kitchen knife used for cutting meat",
+        correct: false,
+      },
+    ],
+  },
+  {
+    question: "What is a elephant?",
+    image: "../assets/assets-sedang/elephant.png",
+    answers: [
+      { option: "the underwater reptile", correct: false },
+      { option: "the flying mammal", correct: false },
+      { option: "the small insect", correct: false },
+      { option: "the big animal", correct: true },
+    ],
+  },
+  {
+    question: "Look at that train, the train has a ___ color?",
+    image: "../assets/assets-sedang/train.png",
+    answers: [
+      { option: "Yellow", correct: true },
+      { option: "Green", correct: false },
+      { option: "Blue", correct: false },
+      { option: "Red", correct: false },
+    ],
+  },
+  {
+    question: "look at that bus, it has ___ wheels?",
+    image: "../assets/assets-sedang/bus.png",
+    answers: [
+      { option: "Two", correct: false },
+      { option: "Six", correct: false },
+      { option: "Eight", correct: false },
+      { option: "Four", correct: true },
+    ],
+  },
+  {
+    question: "I want to be a ____________ when I grow up.",
+    image: "../assets/assets-sedang/doctor.png",
+    answers: [
+      { option: "chef", correct: false },
+      { option: "astronaut", correct: false },
+      { option: "doctor", correct: true },
+      { option: "professional skateboarder", correct: false },
+    ],
+  },
+  {
+    question: "The sun is shining brightly in the ____________.",
+    image: "../assets/assets-sedang/sky.png",
+    answers: [
+      { option: "shoe", correct: false },
+      { option: "sky", correct: true },
+      { option: "bathtub", correct: false },
+      { option: "backpack", correct: false },
+    ],
+  },
   {
     question: "She loves to play the ____________ every day.",
     image: "../assets/assets-sedang/piano.png",
@@ -200,7 +212,7 @@ function loadQuestion() {
   const timerDisplay = document.getElementById("timer");
 
   const answerLetters = ["A", "B", "C", "D"];
-  
+
   indexQuestion.innerHTML = `Soal ${currentQuestion + 1} / ${questions.length}`;
   questionElement.innerHTML = question.question;
   questionImageElement.src = question.image;
@@ -264,16 +276,24 @@ function disableButtons() {
 function displayResult() {
   clearInterval(timer);
 
-  const scoreElement = document.getElementById("score");
-  const wrongAnswersElement = document.getElementById("wrongAnswers");
+  const scoreElementSuccess = document.getElementById("score");
+  const wrongAnswersElementSuccess = document.getElementById("wrongAnswers");
+  const scoreElementFailed = document.getElementById("scoreFailed");
+  const wrongAnswersElementFailed = document.getElementById("wrongAnswersFailed");
+  const resultTextSuccess = document.getElementById("text-result-success");
+  const resultTextFailed = document.getElementById("text-result-failed");
+  const certiImage = document.querySelector(".certi img");
+  const buttonSuccess = document.getElementById("buttonSuccess");
 
-  scoreElement.textContent = score;
-  wrongAnswersElement.textContent = wrongAnswer;
+  scoreElementSuccess.textContent = score;
+  wrongAnswersElementSuccess.textContent = wrongAnswer;
+  scoreElementFailed.textContent = score; // Sesuaikan ini dengan ID yang sesuai jika perlu
+  wrongAnswersElementFailed.textContent = wrongAnswer; // Sesuaikan ini dengan ID yang sesuai jika perlu
 
-  const popupResult = document.getElementById("popup-result");
+  const popupResultSuccess = document.getElementById("popup-result-success");
   const conBtnResult = document.querySelector(".con-btn-result");
   const btnKembali = document.createElement("button");
-  const btnUlangi = document.createElement("button");
+  const btnLanjut = document.createElement("button");
 
   btnKembali.textContent = "Kembali ke halaman utama";
   btnKembali.onclick = function () {
@@ -281,22 +301,30 @@ function displayResult() {
   };
 
   if (score >= 8) {
-    btnUlangi.textContent = "Lanjut";
-    btnUlangi.onclick = function () {
+    certiImage.src = "../assets/certi-dumy.jpg";
+    resultTextSuccess.style.display = "block";
+    resultTextFailed.style.display = "none";
+    buttonSuccess.style.display = "block";
+    btnLanjut.textContent = "Lanjut";
+    btnLanjut.onclick = function () {
       window.location.href = "kuis-sulit.html";
     };
   } else {
-    btnUlangi.textContent = "Ulangi";
-    btnUlangi.onclick = function () {
+    certiImage.src = "../assets/failedToNextLevel.svg";
+    resultTextSuccess.style.display = "none";
+    resultTextFailed.style.display = "block";
+    buttonSuccess.style.display = "none";
+    btnLanjut.textContent = "Ulangi";
+    btnLanjut.onclick = function () {
       window.location.href = "kuis-sedang.html";
     };
   }
 
   conBtnResult.innerHTML = "";
   conBtnResult.appendChild(btnKembali);
-  conBtnResult.appendChild(btnUlangi);
+  conBtnResult.appendChild(btnLanjut);
 
-  popupResult.style.display = "block";
+  popupResultSuccess.style.display = "block";
   questionarea.style.display = "none";
   card2.style.display = "none";
   card3.style.display = "flex";

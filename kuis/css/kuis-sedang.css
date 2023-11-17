@@ -7,7 +7,7 @@
 }
 
 .body-kuis {
-    background: url(../assets/background-kuis.jpg);
+    background: url(../../assets/background-kuis.jpg);
     /* background-size: cover; 
     background-position: center; */
     /* overflow: hidden; */
@@ -121,11 +121,11 @@ audio {
 }
 
 #alert-text {
-    animation: fade-in-fade-out 15000ms forwards;
+    animation: fade-in-fade-out 15s forwards;
 }
 
-#popup-result {
-    display: none;
+#popup-result-success, #popup-result-failed {
+    display: block;
 }
 
 .introduction {
@@ -191,7 +191,7 @@ audio {
     margin-top: 20px;
 }
 
-.con-btn-answer button {
+.con-btn-answer button, .btn-certificate {
     width: 100%;
     border-radius: 10px;
     border: 1px solid #E89C24;
@@ -377,6 +377,7 @@ audio {
 .card-3 .result .box {
     display: flex;
     gap: 20px;
+    flex-direction: column;
     align-items: center;
     padding: 20px;
     margin-top: 20px;
@@ -384,6 +385,27 @@ audio {
     border: 1px solid #C4C4C4;
     background: #FFF;
     box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+}
+
+.card-3 .result .box .certi {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.card-3 .result .box button {
+    border: none;
+    width: 100%;
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border-radius: 10px;
+    background: #E89C24;
+    padding: 5px;
+    cursor: pointer;
 }
 
 .card-3 .result .box .img {
@@ -479,6 +501,11 @@ audio {
 
 @media only screen and (max-width: 500px) {
     .card-3 .result .box {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card-3 .result .box .certi{
         flex-direction: column;
         gap: 10px;
     }
